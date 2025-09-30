@@ -1,0 +1,17 @@
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x102b2ec0, size 0x0000b798 bytes
+Found section 2 with adddress 0x102be658, size 0x00000328 bytes
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc_tmp] Found 3 sections. 3 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+Merging section @ 0x102be658 of size 0x00000328, with section @ 0x102b2ec0 of size 0x0000b798
+Writing section header  #0, adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc]
+Writing section header  #1, adddress 0x102b2ec0, size 0x0000bac0 bytes to file [C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x102b2ec0, size 0x0000b798 bytes to file [C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x102be658, size 0x00000328 bytes to file [C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc]
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x102b2ec0, size 0x0000bac0 bytes
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc] Found 2 sections. 2 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc_xip] Parsing file ...
+[C:/Users/there/Documents/Capstone/RadarFirmware/TestProjects/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang/Debug/empty_awr294x-evm_r5fss0-1_freertos_ti-arm-clang.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

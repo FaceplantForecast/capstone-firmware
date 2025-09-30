@@ -3,3 +3,7 @@ When debugging, you need to first flash the cssdebug app image with the uart sbl
 
 When running a nortos script, you first need to run the sbl_null project for the specific processor
 and then load the built script. 
+-----------------------------------------------------------------------------------
+
+To create a new project, you actually have to import a project and select the empty project with
+the specific processor(s) you want to use.
