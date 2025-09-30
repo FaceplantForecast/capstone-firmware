@@ -1,0 +1,49 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "sbl_null_awr294x-evm_r5fss0-0_nortos_ti-arm-clang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "sbl_null_awr294x-evm_r5fss0-0_nortos_ti-arm-clang",
+                "resourceId": "/sbl_null_awr294x-evm_r5fss0-0_nortos_ti-arm-clang"
+            },
+            "connections": [
+                {
+                    "name": "Texas Instruments XDS110 USB Debug Probe",
+                    "cores": [
+                        {
+                            "name": "Cortex_R5_0",
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>1</curValue>\n  </property>\n\n</PropertyValues>\n"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "gpio_led_blink_awr294x-evm_r5fss0-0_nortos_ti-arm-clang",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "gpio_led_blink_awr294x-evm_r5fss0-0_nortos_ti-arm-clang",
+                "resourceId": "/gpio_led_blink_awr294x-evm_r5fss0-0_nortos_ti-arm-clang"
+            },
+            "connections": [
+                {
+                    "name": "Texas Instruments XDS110 USB Debug Probe",
+                    "cores": [
+                        {
+                            "name": "Cortex_R5_0",
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>1</curValue>\n  </property>\n\n</PropertyValues>\n"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
