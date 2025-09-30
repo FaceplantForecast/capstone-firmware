@@ -1,0 +1,5 @@
+When debugging, you need to first flash the cssdebug app image with the uart sbl image.
+-----------------------------------------------------------------------------------
+
+When running a nortos script, you first need to run the sbl_null project for the specific processor
+and then load the built script. 
