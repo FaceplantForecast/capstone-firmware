@@ -49,6 +49,10 @@
 #define R5F1_ENDPOINT   11
 #define DSP_ENDPOINT    22
 
+//Each core's ID (from AWR2944.ccxml)
+#define R5F1_ID 0
+#define DSP_ID  2
+
 //RPMessage objects
 static RPMessage_Object gMsgObj;
 static uint32_t gMyEndPt;
@@ -62,14 +66,16 @@ typedef struct {
 
 /* This function sends commands to the correct cores to offload tasks
  */
-static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, MathCmd* cmd)
+static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[64])
 {
-    RPMessage_send( (void*)cmd, sizeof(MathCmd),
+    RPMessage_send( (void*)buf, 64,
                     RemoteCoreID, RemoteEndPt,
                     gMyEndPt, 60000);
 }
 
-/* This function handles addition
+/* ======================= Command Handlers ======================= */
+
+/* This function handles addition.
  * It is run locally
  */
 static int32_t cmd_add(int32_t argc, char* argv[])
@@ -82,6 +88,35 @@ static int32_t cmd_add(int32_t argc, char* argv[])
 
         //give result to the CLI
         DebugP_log("ADD result = %d\n", result);
+    }
+    else
+    {
+        DebugP_log("Usage: ADD X Y\n");
+        return -1;
+    }
+    return 0;
+}
+
+/* This function handles subtraction.
+ * It is run on the R5F1 core.
+ */
+static int32_t cmd_sub(int32_t argc, char* argv[])
+{
+    if(argc == 3) //make sure there are 3 parts of the argument
+    {
+        char buf[64];
+        snprintf(buf, sizeof(buf), "SUB %s %s", argv[1], argv[2]);
+        send_to_core(R5F1_ID, R5F1_ENDPOINT, buf);
+
+        //wait for response
+        int result;
+        RPMessage_recv(&gMsgObj, &result, NULL, NULL, NULL, 60000);
+        DebugP_log("SUB result = %d\n", result);
+    }
+    else
+    {
+        DebugP_log("Usage: SUB X Y\n");
+        return -1;
     }
     return 0;
 }
@@ -109,6 +144,12 @@ void empty_main(void *args)
     cliCfg.tableEntry[0].helpString = "Add two integers";
     cliCfg.tableEntry[0].cmdHandlerFxn = cmd_add;
 
+    //subtraction
+    cliCfg.tableEntry[1].cmd = "SUB";
+    cliCfg.tableEntry[1].helpString = "Subtract two integers";
+    cliCfg.tableEntry[1].cmdHandlerFxn = cmd_sub;
+
+    //-----OPEN CLI-----
     CLI_open(&cliCfg);
     while(1)
     {

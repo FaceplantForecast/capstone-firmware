@@ -35,17 +35,35 @@
 #include "ti_drivers_config.h"
 #include "ti_drivers_open_close.h"
 #include "ti_board_open_close.h"
+#include <drivers/ipc_rpmsg.h> //needed for shared memory
+#include <stdlib.h> //needed for sscanf
+
+//RPMessage objects
+static struct RPMessage_Object_s* gMsgObj;
+static uint32_t gMyEndPt;
+
 
 /*
- * This is an empty project provided for all cores present in the device.
- * User can use this project to start their application by adding more SysConfig modules.
- *
- * This application does driver and board init and just prints the pass string on the console.
- * In case of the main core, the print is redirected to the UART console.
- * For all other cores, CCS prints are used.
+ * This does the subtraction operation on the data sent by the main core.
  */
-
 void empty_main(void *args)
 {
+    char buf[64];
+    uint16_t buf_size = 64;
+    uint16_t *buf_size_ptr;
+    buf_size_ptr = &buf_size;
+    while(1)
+    {
+        uint16_t SrcCore, SrcEndPt;
+        int32_t status = RPMessage_recv(gMsgObj, buf, buf_size_ptr, &SrcCore, &SrcEndPt, 60000);
+        if(status > 0) //if a message is actually received
+        {
+            int x, y;
+            sscanf(buf, "SUB %d %d", &x, &y); //get numbers
+            int result = x - y; //calculate
 
+            //send result
+            RPMessage_send(&result, sizeof(result), SrcCore, SrcEndPt, gMyEndPt, 60000);
+        }
+    }
 }
