@@ -10,5 +10,7 @@
       "path": "TestProjects"
     }
   ],
-  "settings": {}
+  "settings": {
+    "CCS.debug.breakpoint.showCore": true
+  }
 }

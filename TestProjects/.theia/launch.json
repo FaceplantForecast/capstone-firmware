@@ -82,7 +82,7 @@
                         {
                             "name": "Cortex_R5_0",
                             "debuggerSettings": {
-                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>0</curValue>\n  </property>\n\n</PropertyValues>\n"
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>1</curValue>\n  </property>\n\n</PropertyValues>\n"
                             }
                         },
                         {
@@ -96,7 +96,16 @@
                             ],
                             "sourceDirs": [
                                 "C:\\ti\\ccs2030\\ccs\\tools\\compiler\\ti-cgt-c6000_8.5.0.LTS\\lib\\src"
-                            ]
+                            ],
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>1</curValue>\n  </property>\n\n</PropertyValues>\n"
+                            }
+                        },
+                        {
+                            "name": "Cortex_R5_1",
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues>\n\n  <property id=\"ResetOnRestart\">\n    <curValue>1</curValue>\n  </property>\n\n</PropertyValues>\n"
+                            }
                         }
                     ]
                 }

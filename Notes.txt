@@ -7,3 +7,6 @@ and then load the built script.
 
 To create a new project, you actually have to import a project and select the empty project with
 the specific processor(s) you want to use.
+-----------------------------------------------------------------------------------
+
+Use the ....appimage_qspi and the qspi sbl, then set SOP jumpers to 001. Otherwise it will not work
