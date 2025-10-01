@@ -1,13 +1,15 @@
 /**
  * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
  * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
- * @cliArgs --device "AWR294X" --package "ETS" --part "Default" --context "r5fss0-1" --product "MCU_PLUS_SDK@07.03.01"
- * @versions {"tool":"1.10.0+2061"}
+ * @cliArgs --device "AWR294X" --part "Default" --package "ETS" --context "r5fss0-1" --product "MCU_PLUS_SDK_AWR2944@10.01.00"
+ * @v2CliArgs --device "AWR2944" --package "FCCSP (ALT)" --variant "AWR294x" --context "r5fss0-1" --product "MCU_PLUS_SDK_AWR2944@10.01.00"
+ * @versions {"tool":"1.25.0+4268"}
  */
 
 /**
  * Import the modules used in this configuration.
  */
+const ipc        = scripting.addModule("/drivers/ipc/ipc");
 const clock      = scripting.addModule("/kernel/dpl/clock");
 const mpu_armv7  = scripting.addModule("/kernel/dpl/mpu_armv7", {}, false);
 const mpu_armv71 = mpu_armv7.addInstance();
@@ -20,6 +22,8 @@ const mpu_armv76 = mpu_armv7.addInstance();
 /**
  * Write custom configuration values to the imported modules.
  */
+ipc.vringMsgSize = 64;
+
 mpu_armv71.$name        = "CONFIG_MPU_REGION0";
 mpu_armv71.attributes   = "Device";
 mpu_armv71.allowExecute = false;

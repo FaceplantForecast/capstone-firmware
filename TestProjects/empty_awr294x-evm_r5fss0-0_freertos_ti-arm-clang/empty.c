@@ -30,19 +30,65 @@
  *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+//DEFAULT INCLUSIONS
 #include <stdio.h>
 #include <kernel/dpl/DebugP.h>
 #include "ti_drivers_config.h"
 #include "ti_drivers_open_close.h"
 #include "ti_board_open_close.h"
+//END DEFAULT INCLUSIONS
+
+#include <stdlib.h> //needed for atoi
+#include <string.h> //needed for parsing strings
+#include <drivers/ipc_rpmsg.h> //needed for shared memory
+#include <C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/utils/cli/cli.h> //needed for CLI wrapper
+#include "FreeRTOS.h" //needed for task management
+#include "task.h" //needed for task management
+
+//Endpoints for each core's mailbox
+#define R5F1_ENDPOINT   11
+#define DSP_ENDPOINT    22
+
+//RPMessage objects
+static RPMessage_Object gMsgObj;
+static uint32_t gMyEndPt;
+
+//command structure
+typedef struct {
+    char op[4]; //opcode
+    int x; //first number
+    int y; //second number
+} MathCmd;
+
+/* This function sends commands to the correct cores to offload tasks
+ */
+static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, MathCmd* cmd)
+{
+    RPMessage_send( (void*)cmd, sizeof(MathCmd),
+                    RemoteCoreID, RemoteEndPt,
+                    gMyEndPt, 60000);
+}
+
+/* This function handles addition
+ * It is run locally
+ */
+static int32_t cmd_add(int32_t argc, char* argv[])
+{
+    if(argc == 3) //make sure there are 3 parts of the argument
+    {
+        int x = atoi(argv[1]); //set second part (first number) as x
+        int y = atoi(argv[2]); //set third part (second number) as y
+        int result = x + y; //add numbers
+
+        //give result to the CLI
+        DebugP_log("ADD result = %d\n", result);
+    }
+    return 0;
+}
 
 /*
- * This is an empty project provided for all cores present in the device.
- * User can use this project to start their application by adding more SysConfig modules.
- *
- * This application does driver and board init and just prints the pass string on the console.
- * In case of the main core, the print is redirected to the UART console.
- * For all other cores, CCS prints are used.
+ * This is adapted from the empty project provided in the ti sdk.
+ * This handles the CLI interface and routing tasks.
  */
 
 void empty_main(void *args)
@@ -51,8 +97,23 @@ void empty_main(void *args)
     Drivers_open();
     Board_driversOpen();
 
-    DebugP_log("All tests have passed!!\r\n");
+    //initiate CLI interface
+    CLI_Cfg cliCfg = {0};
+    cliCfg.cliUartHandle = gUartHandle[CONFIG_UART0]; //UART handle from sysconfig
+    cliCfg.cliPrompt = "R5F0> ";
+    cliCfg.taskPriority = 3;
 
+    //-----SET UP COMMANDS-----
+    //addition
+    cliCfg.tableEntry[0].cmd = "ADD";
+    cliCfg.tableEntry[0].helpString = "Add two integers";
+    cliCfg.tableEntry[0].cmdHandlerFxn = cmd_add;
+
+    CLI_open(&cliCfg);
+    while(1)
+    {
+        vTaskDelay(500); //keep task alive
+    }
     Board_driversClose();
     Drivers_close();
-}
+};

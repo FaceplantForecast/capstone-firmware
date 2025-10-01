@@ -39,6 +39,30 @@
 #include "ti_drivers_config.h"
 
 
+/* ----------- ClockP ----------- */
+#define DSS_RTIA_CLOCK_SRC_MUX_ADDR (0x6000094u)
+#define DSS_RTIA_CLOCK_SRC_SYSCLK (0x222u)
+#define DSS_RTIA_BASE_ADDR     (0x6F7A000u)
+
+ClockP_Config gClockConfig = {
+    .timerBaseAddr = DSS_RTIA_BASE_ADDR, 
+    .timerHwiIntNum = 66,
+    .timerInputClkHz = 150000000,
+    .timerInputPreScaler = 1,
+    .usecPerTick = 1000,
+    .intrPriority = 15,
+};
+
+/* ----------- DebugP ----------- */
+void putchar_(char character)
+{
+    /* Output to CCS console */
+    putchar(character);
+    /* Output to UART console */
+    DebugP_uartLogWriterPutChar(character);
+}
+
+
 /* ----------- CacheP ----------- */
 const CacheP_Config       gCacheConfig = {
     .enable = 1,
@@ -64,30 +88,6 @@ CacheP_MarRegion    gCacheMarRegion[] = {
         .size = 16U * 1024U * 1024U,
         .value = 0,
     },
-};
-
-/* ----------- DebugP ----------- */
-void putchar_(char character)
-{
-    /* Output to CCS console */
-    putchar(character);
-    /* Output to UART console */
-    DebugP_uartLogWriterPutChar(character);
-}
-
-
-/* ----------- ClockP ----------- */
-#define DSS_RTIA_CLOCK_SRC_MUX_ADDR (0x6000094u)
-#define DSS_RTIA_CLOCK_SRC_SYSCLK (0x222u)
-#define DSS_RTIA_BASE_ADDR     (0x6F7A000u)
-
-ClockP_Config gClockConfig = {
-    .timerBaseAddr = DSS_RTIA_BASE_ADDR, 
-    .timerHwiIntNum = 66,
-    .timerInputClkHz = 150000000,
-    .timerInputPreScaler = 1,
-    .usecPerTick = 1000,
-    .intrPriority = 15,
 };
 
 void Dpl_init(void)

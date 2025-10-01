@@ -57,6 +57,14 @@ ClockP_Config gClockConfig = {
     .intrPriority = 15,
 };
 
+/* ----------- DebugP ----------- */
+void putchar_(char character)
+{
+    /* Output to CCS console */
+    putchar(character);
+}
+
+
 #define RODATA_CFG_SECTION __attribute__((section(".rodata.cfg")))
 /* ----------- CacheP ----------- */
 const CacheP_Config gCacheConfig RODATA_CFG_SECTION = {
@@ -160,14 +168,6 @@ const MpuP_RegionConfig gMpuRegionConfig[CONFIG_MPU_NUM_REGIONS] RODATA_CFG_SECT
         },
     },
 };
-
-/* ----------- DebugP ----------- */
-void putchar_(char character)
-{
-    /* Output to CCS console */
-    putchar(character);
-}
-
 
 
 #define BOOT_SECTION __attribute__((section(".text.boot")))

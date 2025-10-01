@@ -44,10 +44,10 @@ extern "C" {
 #endif
 
 #include <kernel/dpl/HwiP.h>
+#include <kernel/dpl/ClockP.h>
+#include <kernel/dpl/DebugP.h>
 #include <kernel/dpl/CacheP.h>
 
-#include <kernel/dpl/DebugP.h>
-#include <kernel/dpl/ClockP.h>
 
 void Dpl_init(void);
 void Dpl_deinit(void);

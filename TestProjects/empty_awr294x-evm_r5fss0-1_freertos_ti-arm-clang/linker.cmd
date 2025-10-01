@@ -33,6 +33,10 @@ __SVC_STACK_SIZE = 4096; /* This is the size of stack when R5 is in SVC mode */
 __ABORT_STACK_SIZE = 256;  /* This is the size of stack when R5 is in ABORT mode */
 __UNDEFINED_STACK_SIZE = 256;  /* This is the size of stack when R5 is in UNDEF mode */
 
+
+/*-----------------------------------------------------------------------------
+ * SECTIONS
+ *----------------------------------------------------------------------------*/
 SECTIONS
 {
     /* This has the R5F entry point and vector table, this MUST be at 0x0 */
@@ -98,6 +102,9 @@ SECTIONS
     /* any data buffer needed to be put in L3 can be assigned this section name */
     .bss.dss_l3 {} > DSS_L3
 
+    /* RPMessage shared memory buffer */
+    .bss.rpmsg_buf : {} palign(32) > USER_SHM_MEM
+
     /* General purpose user shared memory, used in some examples */
     .bss.user_shared_mem (NOLOAD) : {} > USER_SHM_MEM
     /* this is used when Debug log's to shared memory are enabled, else this is not used */
@@ -109,6 +116,9 @@ SECTIONS
     .bss.sipc_r5f_queue_mem   (NOLOAD) : {} > MAILBOX_R5F
 }
 
+/*-----------------------------------------------------------------------------
+ * MEMORY Map
+ *----------------------------------------------------------------------------*/
 MEMORY
 {
     R5F_VECS  : ORIGIN = 0x00000000 , LENGTH = 0x00000040

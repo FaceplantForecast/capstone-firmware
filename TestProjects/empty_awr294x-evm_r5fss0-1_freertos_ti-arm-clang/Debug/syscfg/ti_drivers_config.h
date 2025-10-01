@@ -52,6 +52,16 @@ extern "C" {
 void System_init(void);
 void System_deinit(void);
 
+/*
+ * IPC Notify
+ */
+#include <drivers/ipc_notify.h>
+
+/*
+ * IPC RPMessage
+ */
+#include <drivers/ipc_rpmsg.h>
+
 
 #include <drivers/soc.h>
 #include <kernel/dpl/CycleCounterP.h>

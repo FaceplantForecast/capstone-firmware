@@ -52,6 +52,20 @@ extern "C" {
 void System_init(void);
 void System_deinit(void);
 
+/*
+ * IPC Notify
+ */
+#include <drivers/ipc_notify.h>
+/*
+ * Mailbox communication
+ */
+#include <drivers/mailbox.h>
+
+/*
+ * IPC RPMessage
+ */
+#include <drivers/ipc_rpmsg.h>
+
 
 /*
  * UART

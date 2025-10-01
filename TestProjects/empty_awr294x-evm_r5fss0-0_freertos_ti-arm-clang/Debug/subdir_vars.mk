@@ -12,6 +12,8 @@ SYSCFG_SRCS += \
 ../example.syscfg 
 
 C_SRCS += \
+../cli.c \
+../cli_mmwave.c \
 ../empty.c \
 ./syscfg/ti_dpl_config.c \
 ./syscfg/ti_drivers_config.c \
@@ -24,7 +26,18 @@ C_SRCS += \
 ./syscfg/ti_enet_open_close.c \
 ./syscfg/ti_enet_soc.c \
 ./syscfg/ti_enet_lwipif.c \
-../main.c 
+../main.c \
+../mmwave.c \
+../mmwave_fullcfg.c \
+../mmwave_link_common.c \
+../mmwave_link_mailbox.c \
+../mmwave_listlib.c \
+../mmwave_osal.c \
+../rl_controller.c \
+../rl_device.c \
+../rl_driver.c \
+../rl_monitoring.c \
+../rl_sensor.c 
 
 GEN_FILES += \
 ./syscfg/ti_dpl_config.c \
@@ -43,6 +56,8 @@ GEN_MISC_DIRS += \
 ./syscfg 
 
 C_DEPS += \
+./cli.d \
+./cli_mmwave.d \
 ./empty.d \
 ./syscfg/ti_dpl_config.d \
 ./syscfg/ti_drivers_config.d \
@@ -55,9 +70,22 @@ C_DEPS += \
 ./syscfg/ti_enet_open_close.d \
 ./syscfg/ti_enet_soc.d \
 ./syscfg/ti_enet_lwipif.d \
-./main.d 
+./main.d \
+./mmwave.d \
+./mmwave_fullcfg.d \
+./mmwave_link_common.d \
+./mmwave_link_mailbox.d \
+./mmwave_listlib.d \
+./mmwave_osal.d \
+./rl_controller.d \
+./rl_device.d \
+./rl_driver.d \
+./rl_monitoring.d \
+./rl_sensor.d 
 
 OBJS += \
+./cli.o \
+./cli_mmwave.o \
 ./empty.o \
 ./syscfg/ti_dpl_config.o \
 ./syscfg/ti_drivers_config.o \
@@ -70,7 +98,18 @@ OBJS += \
 ./syscfg/ti_enet_open_close.o \
 ./syscfg/ti_enet_soc.o \
 ./syscfg/ti_enet_lwipif.o \
-./main.o 
+./main.o \
+./mmwave.o \
+./mmwave_fullcfg.o \
+./mmwave_link_common.o \
+./mmwave_link_mailbox.o \
+./mmwave_listlib.o \
+./mmwave_osal.o \
+./rl_controller.o \
+./rl_device.o \
+./rl_driver.o \
+./rl_monitoring.o \
+./rl_sensor.o 
 
 GEN_MISC_FILES += \
 ./syscfg/ti_dpl_config.h \
@@ -86,6 +125,8 @@ GEN_MISC_DIRS__QUOTED += \
 "syscfg" 
 
 OBJS__QUOTED += \
+"cli.o" \
+"cli_mmwave.o" \
 "empty.o" \
 "syscfg\ti_dpl_config.o" \
 "syscfg\ti_drivers_config.o" \
@@ -98,7 +139,18 @@ OBJS__QUOTED += \
 "syscfg\ti_enet_open_close.o" \
 "syscfg\ti_enet_soc.o" \
 "syscfg\ti_enet_lwipif.o" \
-"main.o" 
+"main.o" \
+"mmwave.o" \
+"mmwave_fullcfg.o" \
+"mmwave_link_common.o" \
+"mmwave_link_mailbox.o" \
+"mmwave_listlib.o" \
+"mmwave_osal.o" \
+"rl_controller.o" \
+"rl_device.o" \
+"rl_driver.o" \
+"rl_monitoring.o" \
+"rl_sensor.o" 
 
 GEN_MISC_FILES__QUOTED += \
 "syscfg\ti_dpl_config.h" \
@@ -111,6 +163,8 @@ GEN_MISC_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.h" 
 
 C_DEPS__QUOTED += \
+"cli.d" \
+"cli_mmwave.d" \
 "empty.d" \
 "syscfg\ti_dpl_config.d" \
 "syscfg\ti_drivers_config.d" \
@@ -123,7 +177,18 @@ C_DEPS__QUOTED += \
 "syscfg\ti_enet_open_close.d" \
 "syscfg\ti_enet_soc.d" \
 "syscfg\ti_enet_lwipif.d" \
-"main.d" 
+"main.d" \
+"mmwave.d" \
+"mmwave_fullcfg.d" \
+"mmwave_link_common.d" \
+"mmwave_link_mailbox.d" \
+"mmwave_listlib.d" \
+"mmwave_osal.d" \
+"rl_controller.d" \
+"rl_device.d" \
+"rl_driver.d" \
+"rl_monitoring.d" \
+"rl_sensor.d" 
 
 GEN_FILES__QUOTED += \
 "syscfg\ti_dpl_config.c" \
@@ -139,6 +204,8 @@ GEN_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.c" 
 
 C_SRCS__QUOTED += \
+"../cli.c" \
+"../cli_mmwave.c" \
 "../empty.c" \
 "./syscfg/ti_dpl_config.c" \
 "./syscfg/ti_drivers_config.c" \
@@ -151,7 +218,18 @@ C_SRCS__QUOTED += \
 "./syscfg/ti_enet_open_close.c" \
 "./syscfg/ti_enet_soc.c" \
 "./syscfg/ti_enet_lwipif.c" \
-"../main.c" 
+"../main.c" \
+"../mmwave.c" \
+"../mmwave_fullcfg.c" \
+"../mmwave_link_common.c" \
+"../mmwave_link_mailbox.c" \
+"../mmwave_listlib.c" \
+"../mmwave_osal.c" \
+"../rl_controller.c" \
+"../rl_device.c" \
+"../rl_driver.c" \
+"../rl_monitoring.c" \
+"../rl_sensor.c" 
 
 SYSCFG_SRCS__QUOTED += \
 "../example.syscfg" 

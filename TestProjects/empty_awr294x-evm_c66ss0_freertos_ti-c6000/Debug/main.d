@@ -105,13 +105,19 @@ main.obj: syscfg/ti_dpl_config.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/HwiP.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/HwiP_c6x.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/SystemP.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/ClockP.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP_c6x.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP.h
-main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/ClockP.h
-main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_notify.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/mailbox.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/soc_config.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/awr294x/soc_config.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/mailbox/v0/mailbox.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_rpmsg.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_rpmsg/include/ipc_rpmsg_linux_resource_table.h
+main.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stddef.h
+main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart/v1/uart_sci.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/SemaphoreP.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/cslr_uart.h
@@ -129,7 +135,6 @@ main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CycleCounterP.h
 main.obj: syscfg/ti_board_config.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/FreeRTOS.h
-main.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stddef.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/config/awr294x/c66/FreeRTOSConfig.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/projdefs.h
 main.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/portable.h
@@ -349,19 +354,31 @@ C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/ker
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/SystemP.h:
 
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/ClockP.h:
+
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP_c6x.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/CacheP.h:
 
-C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/ClockP.h:
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_notify.h:
 
-C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart.h:
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/mailbox.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/soc_config.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/awr294x/soc_config.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/mailbox/v0/mailbox.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_rpmsg.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/ipc_rpmsg/include/ipc_rpmsg_linux_resource_table.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stddef.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/uart/v1/uart_sci.h:
 
@@ -396,8 +413,6 @@ C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/ker
 syscfg/ti_board_config.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/FreeRTOS.h:
-
-C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stddef.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/config/awr294x/c66/FreeRTOSConfig.h:
 

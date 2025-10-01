@@ -45,9 +45,9 @@ extern "C" {
 
 #include <kernel/dpl/HwiP.h>
 #include <kernel/dpl/ClockP.h>
+#include <kernel/dpl/DebugP.h>
 #include <kernel/dpl/CacheP.h>
 #include <kernel/dpl/MpuP_armv7.h>
-#include <kernel/dpl/DebugP.h>
 
 void Dpl_init(void);
 void Dpl_deinit(void);
