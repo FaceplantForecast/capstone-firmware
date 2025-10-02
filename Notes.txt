@@ -14,3 +14,6 @@ Use the ....appimage_qspi and the qspi sbl, then set SOP jumpers to 001. Otherwi
 
 Make sure to use PuTTY to connect to the CLI rather than the CCS terminal
 -----------------------------------------------------------------------------------
+
+Remember, Status Code 0 is for SUCCESS
+-----------------------------------------------------------------------------------

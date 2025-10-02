@@ -45,17 +45,13 @@
 #include "FreeRTOS.h" //needed for task management
 #include "task.h" //needed for task management
 
-//Endpoints for each core's mailbox
-#define R5F1_ENDPOINT   11
-#define DSP_ENDPOINT    22
-
-//Each core's ID (from AWR2944.ccxml)
-#define R5F1_ID 0
-#define DSP_ID  2
-
 //RPMessage objects
 static RPMessage_Object gMsgObj;
-static uint32_t gMyEndPt;
+static RPMessage_Object gRecvObj;
+static uint16_t gMainSendEndPt = 5U;
+static uint16_t gMainRecEndPt = 6U; //local for this core
+static uint16_t gSubSendEndPt = 7U;
+static uint16_t gSubRecEndPt = 8U;
 
 //command structure
 typedef struct {
@@ -68,9 +64,10 @@ typedef struct {
  */
 static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[64])
 {
-    RPMessage_send( (void*)buf, 64,
+    uint16_t size = strlen(buf) + 1;
+    RPMessage_send( buf, size,
                     RemoteCoreID, RemoteEndPt,
-                    gMyEndPt, 60000);
+                    gMainSendEndPt, SystemP_WAIT_FOREVER);
 }
 
 /* ======================= Command Handlers ======================= */
@@ -87,11 +84,11 @@ static int32_t cmd_add(int32_t argc, char* argv[])
         int result = x + y; //add numbers
 
         //give result to the CLI
-        DebugP_log("ADD result = %d\n", result);
+        DebugP_log("ADD result = %d\r\n", result);
     }
     else
     {
-        DebugP_log("Usage: ADD X Y\n");
+        DebugP_log("Usage: ADD X Y\r\n");
         return -1;
     }
     return 0;
@@ -105,17 +102,26 @@ static int32_t cmd_sub(int32_t argc, char* argv[])
     if(argc == 3) //make sure there are 3 parts of the argument
     {
         char buf[64];
-        snprintf(buf, sizeof(buf), "SUB %s %s", argv[1], argv[2]);
-        send_to_core(R5F1_ID, R5F1_ENDPOINT, buf);
+        uint16_t buf_size = sizeof(buf);
+        snprintf(buf, buf_size-1, "SUB %s %s", argv[1], argv[2]);
+        send_to_core(CSL_CORE_ID_R5FSS0_1, gSubRecEndPt, buf);
+
+        //create variables for core id and endpoint
+        uint16_t SrcCore = 1;
+        uint16_t SrcEndPt = gSubSendEndPt;
 
         //wait for response
-        int result;
-        RPMessage_recv(&gMsgObj, &result, NULL, NULL, NULL, 60000);
-        DebugP_log("SUB result = %d\n", result);
+        char recv_buf[64];
+        uint16_t recv_buf_size = sizeof(recv_buf);
+        int32_t status = RPMessage_recv(&gRecvObj, recv_buf, &recv_buf_size, &SrcCore, &SrcEndPt, SystemP_WAIT_FOREVER);
+        if(status == 0)
+        {
+            DebugP_log("SUB result = %s\r\n", recv_buf);
+        }
     }
     else
     {
-        DebugP_log("Usage: SUB X Y\n");
+        DebugP_log("Usage: SUB X Y\r\n");
         return -1;
     }
     return 0;
@@ -131,6 +137,19 @@ void empty_main(void *args)
     /* Open drivers to open the UART driver for console */
     Drivers_open();
     Board_driversOpen();
+
+    //RPMessage setup
+    RPMessage_CreateParams createParams;
+    RPMessage_CreateParams_init(&createParams);
+    createParams.localEndPt = gMainRecEndPt;
+    RPMessage_construct(&gRecvObj, &createParams);
+    DebugP_log("R5F0 RPMessage local endpoint = %u\r\n", gMainRecEndPt);
+
+    //sending object
+    RPMessage_CreateParams createParams2;
+    RPMessage_CreateParams_init(&createParams2);
+    createParams2.localEndPt = gMainSendEndPt;
+    RPMessage_construct(&gMsgObj, &createParams2);
 
     //initiate CLI interface
     CLI_Cfg cliCfg = {0};

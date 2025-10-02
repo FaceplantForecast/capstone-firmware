@@ -1,7 +1,7 @@
 ******************************************************************************
             TI ARM Clang Linker PC v4.0.3                      
 ******************************************************************************
->> Linked Tue Sep 30 16:09:17 2025
+>> Linked Thu Oct  2 16:54:54 2025
 
 OUTPUT FILE NAME:   <gpio_led_blink_awr294x-evm_r5fss0-0_nortos_ti-arm-clang.out>
 ENTRY POINT SYMBOL: "_vectors"  address: 00000000
