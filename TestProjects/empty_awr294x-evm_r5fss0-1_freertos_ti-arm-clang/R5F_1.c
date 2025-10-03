@@ -38,20 +38,17 @@
 #include <drivers/ipc_rpmsg.h> //needed for shared memory
 #include <stdlib.h> //needed for sscanf
 #include <string.h> //needed for string operations
+#include <C:\Users\there\Documents\Capstone\RadarFirmware\enums.h> //my custom universal values
 
 //RPMessage objects
 static RPMessage_Object gMsgObj;
 static RPMessage_Object gRecvObj;
-static uint16_t gMainSendEndPt = 5U; //local for this core
-static uint16_t gMainRecEndPt = 6U;
-static uint16_t gSubSendEndPt = 7U;
-static uint16_t gSubRecEndPt = 8U;
 
 /* This function sends commands to the correct cores to offload tasks
  */
 static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[64])
 {
-    uint16_t size = strlen(buf) + 1;
+    uint16_t size = strlen(buf) + 1; //add 1 to account for terminating character
     RPMessage_send( buf, size,
                     RemoteCoreID, RemoteEndPt,
                     gSubSendEndPt, SystemP_WAIT_FOREVER);
@@ -60,7 +57,7 @@ static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[6
 /*
  * This does the subtraction operation on the data sent by the main core.
  */
-void empty_main(void *args)
+void r5f1_main(void *args)
 {
     /* Open drivers for the board and such */
     Drivers_open();

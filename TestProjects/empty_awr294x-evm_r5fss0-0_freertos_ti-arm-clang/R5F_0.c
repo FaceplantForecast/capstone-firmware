@@ -44,14 +44,11 @@
 #include <C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/utils/cli/cli.h> //needed for CLI wrapper
 #include "FreeRTOS.h" //needed for task management
 #include "task.h" //needed for task management
+#include <C:\Users\there\Documents\Capstone\RadarFirmware\enums.h> //my custom universal values
 
 //RPMessage objects
 static RPMessage_Object gMsgObj;
 static RPMessage_Object gRecvObj;
-static uint16_t gMainSendEndPt = 5U;
-static uint16_t gMainRecEndPt = 6U; //local for this core
-static uint16_t gSubSendEndPt = 7U;
-static uint16_t gSubRecEndPt = 8U;
 
 //command structure
 typedef struct {
@@ -64,7 +61,7 @@ typedef struct {
  */
 static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[64])
 {
-    uint16_t size = strlen(buf) + 1;
+    uint16_t size = strlen(buf) + 1; //add 1 to account for terminating character
     RPMessage_send( buf, size,
                     RemoteCoreID, RemoteEndPt,
                     gMainSendEndPt, SystemP_WAIT_FOREVER);
@@ -107,7 +104,7 @@ static int32_t cmd_sub(int32_t argc, char* argv[])
         send_to_core(CSL_CORE_ID_R5FSS0_1, gSubRecEndPt, buf);
 
         //create variables for core id and endpoint
-        uint16_t SrcCore = 1;
+        uint16_t SrcCore = CSL_CORE_ID_R5FSS0_1;
         uint16_t SrcEndPt = gSubSendEndPt;
 
         //wait for response
@@ -127,12 +124,68 @@ static int32_t cmd_sub(int32_t argc, char* argv[])
     return 0;
 }
 
+/* This function handles multiplication.
+ * It is run on the DSP core.
+ */
+static int32_t cmd_mul(int32_t argc, char* argv[])
+{
+    if(argc == 3) //make sure there are 3 parts of the argument
+    {
+        char buf[64];
+        uint16_t buf_size = sizeof(buf);
+        snprintf(buf, buf_size-1, "MUL %s %s", argv[1], argv[2]);
+        send_to_core(CSL_CORE_ID_C66SS0, gDSPRecEndPt, buf);
+
+        //create variables for core id and endpoint
+        uint16_t SrcCore = CSL_CORE_ID_C66SS0;
+        uint16_t SrcEndPt = gDSPSendEndPt;
+
+        //wait for response
+        char recv_buf[64];
+        uint16_t recv_buf_size = sizeof(recv_buf);
+        int32_t status = RPMessage_recv(&gRecvObj, recv_buf, &recv_buf_size, &SrcCore, &SrcEndPt, SystemP_WAIT_FOREVER);
+        if(status == 0)
+        {
+            DebugP_log("MUL result = %s\r\n", recv_buf);
+        }
+    }
+    else
+    {
+        DebugP_log("Usage: MUL X Y\r\n");
+        return -1;
+    }
+    return 0;
+}
+
+/* 
+ * This function handles the setting up the CLI commands
+ */
+static int32_t cli_setup(CLI_Cfg cliCfg)
+{
+    /*-----BASIC TEST COMMANDS-----*/
+    //addition
+    cliCfg.tableEntry[0].cmd = "ADD";
+    cliCfg.tableEntry[0].helpString = "Add two integers";
+    cliCfg.tableEntry[0].cmdHandlerFxn = cmd_add;
+
+    //subtraction
+    cliCfg.tableEntry[1].cmd = "SUB";
+    cliCfg.tableEntry[1].helpString = "Subtract two integers";
+    cliCfg.tableEntry[1].cmdHandlerFxn = cmd_sub;
+
+    //multiplication
+    cliCfg.tableEntry[2].cmd = "MUL";
+    cliCfg.tableEntry[2].helpString = "Multiply two integers";
+    cliCfg.tableEntry[2].cmdHandlerFxn = cmd_mul;
+
+    return 0;
+}
+
 /*
  * This is adapted from the empty project provided in the ti sdk.
  * This handles the CLI interface and routing tasks.
  */
-
-void empty_main(void *args)
+void r5f0_main(void *args)
 {
     /* Open drivers to open the UART driver for console */
     Drivers_open();
@@ -157,18 +210,10 @@ void empty_main(void *args)
     cliCfg.cliPrompt = "R5F0> ";
     cliCfg.taskPriority = 3;
 
-    //-----SET UP COMMANDS-----
-    //addition
-    cliCfg.tableEntry[0].cmd = "ADD";
-    cliCfg.tableEntry[0].helpString = "Add two integers";
-    cliCfg.tableEntry[0].cmdHandlerFxn = cmd_add;
+    //set up CLI commands
+    cli_setup(cliCfg);
 
-    //subtraction
-    cliCfg.tableEntry[1].cmd = "SUB";
-    cliCfg.tableEntry[1].helpString = "Subtract two integers";
-    cliCfg.tableEntry[1].cmdHandlerFxn = cmd_sub;
-
-    //-----OPEN CLI-----
+    /*-----OPEN CLI-----*/
     CLI_open(&cliCfg);
     while(1)
     {

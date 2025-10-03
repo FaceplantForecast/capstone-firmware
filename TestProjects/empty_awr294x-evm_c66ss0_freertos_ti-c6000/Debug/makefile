@@ -10,7 +10,7 @@ GEN_OPTS__FLAG :=
 GEN_CMDS__FLAG := 
 
 ORDERED_OBJS += \
-"./empty.obj" \
+"./DSP.obj" \
 "./syscfg/ti_dpl_config.obj" \
 "./syscfg/ti_drivers_config.obj" \
 "./syscfg/ti_drivers_open_close.obj" \
@@ -156,8 +156,8 @@ empty_awr294x-evm_c66ss0_freertos_ti-c6000.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "empty.obj" "syscfg\ti_dpl_config.obj" "syscfg\ti_drivers_config.obj" "syscfg\ti_drivers_open_close.obj" "syscfg\ti_pinmux_config.obj" "syscfg\ti_power_clock_config.obj" "syscfg\ti_board_config.obj" "syscfg\ti_board_open_close.obj" "syscfg\ti_enet_config.obj" "syscfg\ti_enet_open_close.obj" "syscfg\ti_enet_soc.obj" "syscfg\ti_enet_lwipif.obj" "main.obj" 
-	-$(RM) "empty.d" "syscfg\ti_dpl_config.d" "syscfg\ti_drivers_config.d" "syscfg\ti_drivers_open_close.d" "syscfg\ti_pinmux_config.d" "syscfg\ti_power_clock_config.d" "syscfg\ti_board_config.d" "syscfg\ti_board_open_close.d" "syscfg\ti_enet_config.d" "syscfg\ti_enet_open_close.d" "syscfg\ti_enet_soc.d" "syscfg\ti_enet_lwipif.d" "main.d" 
+	-$(RM) "DSP.obj" "syscfg\ti_dpl_config.obj" "syscfg\ti_drivers_config.obj" "syscfg\ti_drivers_open_close.obj" "syscfg\ti_pinmux_config.obj" "syscfg\ti_power_clock_config.obj" "syscfg\ti_board_config.obj" "syscfg\ti_board_open_close.obj" "syscfg\ti_enet_config.obj" "syscfg\ti_enet_open_close.obj" "syscfg\ti_enet_soc.obj" "syscfg\ti_enet_lwipif.obj" "main.obj" 
+	-$(RM) "DSP.d" "syscfg\ti_dpl_config.d" "syscfg\ti_drivers_config.d" "syscfg\ti_drivers_open_close.d" "syscfg\ti_pinmux_config.d" "syscfg\ti_power_clock_config.d" "syscfg\ti_board_config.d" "syscfg\ti_board_open_close.d" "syscfg\ti_enet_config.d" "syscfg\ti_enet_open_close.d" "syscfg\ti_enet_soc.d" "syscfg\ti_enet_lwipif.d" "main.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

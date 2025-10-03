@@ -12,7 +12,7 @@ SYSCFG_SRCS += \
 ../example.syscfg 
 
 C_SRCS += \
-../empty.c \
+../DSP.c \
 ./syscfg/ti_dpl_config.c \
 ./syscfg/ti_drivers_config.c \
 ./syscfg/ti_drivers_open_close.c \
@@ -43,7 +43,7 @@ GEN_MISC_DIRS += \
 ./syscfg 
 
 C_DEPS += \
-./empty.d \
+./DSP.d \
 ./syscfg/ti_dpl_config.d \
 ./syscfg/ti_drivers_config.d \
 ./syscfg/ti_drivers_open_close.d \
@@ -58,7 +58,7 @@ C_DEPS += \
 ./main.d 
 
 OBJS += \
-./empty.obj \
+./DSP.obj \
 ./syscfg/ti_dpl_config.obj \
 ./syscfg/ti_drivers_config.obj \
 ./syscfg/ti_drivers_open_close.obj \
@@ -86,7 +86,7 @@ GEN_MISC_DIRS__QUOTED += \
 "syscfg" 
 
 OBJS__QUOTED += \
-"empty.obj" \
+"DSP.obj" \
 "syscfg\ti_dpl_config.obj" \
 "syscfg\ti_drivers_config.obj" \
 "syscfg\ti_drivers_open_close.obj" \
@@ -111,7 +111,7 @@ GEN_MISC_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.h" 
 
 C_DEPS__QUOTED += \
-"empty.d" \
+"DSP.d" \
 "syscfg\ti_dpl_config.d" \
 "syscfg\ti_drivers_config.d" \
 "syscfg\ti_drivers_open_close.d" \
@@ -139,7 +139,7 @@ GEN_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.c" 
 
 C_SRCS__QUOTED += \
-"../empty.c" \
+"../DSP.c" \
 "./syscfg/ti_dpl_config.c" \
 "./syscfg/ti_drivers_config.c" \
 "./syscfg/ti_drivers_open_close.c" \

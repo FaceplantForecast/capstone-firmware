@@ -1,4 +1,4 @@
-"./empty.obj"
+"./DSP.obj"
 "./syscfg/ti_dpl_config.obj"
 "./syscfg/ti_drivers_config.obj"
 "./syscfg/ti_drivers_open_close.obj"

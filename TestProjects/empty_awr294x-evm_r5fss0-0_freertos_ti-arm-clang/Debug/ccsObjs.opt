@@ -1,6 +1,6 @@
+"./R5F_0.o"
 "./cli.o"
 "./cli_mmwave.o"
-"./empty.o"
 "./syscfg/ti_dpl_config.o"
 "./syscfg/ti_drivers_config.o"
 "./syscfg/ti_drivers_open_close.o"

@@ -12,9 +12,9 @@ SYSCFG_SRCS += \
 ../example.syscfg 
 
 C_SRCS += \
+../R5F_0.c \
 ../cli.c \
 ../cli_mmwave.c \
-../empty.c \
 ./syscfg/ti_dpl_config.c \
 ./syscfg/ti_drivers_config.c \
 ./syscfg/ti_drivers_open_close.c \
@@ -56,9 +56,9 @@ GEN_MISC_DIRS += \
 ./syscfg 
 
 C_DEPS += \
+./R5F_0.d \
 ./cli.d \
 ./cli_mmwave.d \
-./empty.d \
 ./syscfg/ti_dpl_config.d \
 ./syscfg/ti_drivers_config.d \
 ./syscfg/ti_drivers_open_close.d \
@@ -84,9 +84,9 @@ C_DEPS += \
 ./rl_sensor.d 
 
 OBJS += \
+./R5F_0.o \
 ./cli.o \
 ./cli_mmwave.o \
-./empty.o \
 ./syscfg/ti_dpl_config.o \
 ./syscfg/ti_drivers_config.o \
 ./syscfg/ti_drivers_open_close.o \
@@ -125,9 +125,9 @@ GEN_MISC_DIRS__QUOTED += \
 "syscfg" 
 
 OBJS__QUOTED += \
+"R5F_0.o" \
 "cli.o" \
 "cli_mmwave.o" \
-"empty.o" \
 "syscfg\ti_dpl_config.o" \
 "syscfg\ti_drivers_config.o" \
 "syscfg\ti_drivers_open_close.o" \
@@ -163,9 +163,9 @@ GEN_MISC_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.h" 
 
 C_DEPS__QUOTED += \
+"R5F_0.d" \
 "cli.d" \
 "cli_mmwave.d" \
-"empty.d" \
 "syscfg\ti_dpl_config.d" \
 "syscfg\ti_drivers_config.d" \
 "syscfg\ti_drivers_open_close.d" \
@@ -204,9 +204,9 @@ GEN_FILES__QUOTED += \
 "syscfg\ti_enet_lwipif.c" 
 
 C_SRCS__QUOTED += \
+"../R5F_0.c" \
 "../cli.c" \
 "../cli_mmwave.c" \
-"../empty.c" \
 "./syscfg/ti_dpl_config.c" \
 "./syscfg/ti_drivers_config.c" \
 "./syscfg/ti_drivers_open_close.c" \
