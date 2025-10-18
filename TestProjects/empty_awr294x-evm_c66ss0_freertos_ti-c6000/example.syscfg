@@ -9,6 +9,10 @@
 /**
  * Import the modules used in this configuration.
  */
+const edma      = scripting.addModule("/drivers/edma/edma", {}, false);
+const edma1     = edma.addInstance();
+const hwa       = scripting.addModule("/drivers/hwa/hwa", {}, false);
+const hwa1      = hwa.addInstance();
 const ipc       = scripting.addModule("/drivers/ipc/ipc");
 const cache_c6x = scripting.addModule("/kernel/dpl/cache_c6x");
 const debug_log = scripting.addModule("/kernel/dpl/debug_log");
@@ -16,6 +20,9 @@ const debug_log = scripting.addModule("/kernel/dpl/debug_log");
 /**
  * Write custom configuration values to the imported modules.
  */
+hwa1.$name               = "CONFIG_HWA0";
+hwa1.configDirIntr.$name = "HWA_DIR_INTR_MAP0";
+
 ipc.vringMsgSize        = 64;
 ipc.configDirIntr.$name = "IPC_DIR_INTR_MAP0";
 
@@ -31,10 +38,9 @@ debug_log.uartLog.DSS_UART.$assign    = "DSS_UARTA";
 debug_log.uartLog.DSS_UART.RX.$assign = "PAD_DD";
 debug_log.uartLog.DSS_UART.TX.$assign = "PAD_DC";
 
-const edma                         = scripting.addModule("/drivers/edma/edma", {}, false);
-const edma1                        = edma.addInstance({}, false);
 edma1.$name                        = "CONFIG_EDMA0";
 debug_log.uartLog.edmaConfig       = edma1;
+edma1.edmaRmDmaCh[0].resourceType  = scripting.forceWrite("ownDmaCh");
 edma1.edmaRmDmaCh[0].$name         = "CONFIG_EDMA_RM0";
 edma1.edmaRmQdmaCh[0].$name        = "CONFIG_EDMA_RM1";
 edma1.edmaRmTcc[0].$name           = "CONFIG_EDMA_RM2";

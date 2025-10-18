@@ -44,6 +44,13 @@
 static RPMessage_Object gMsgObj;
 static RPMessage_Object gRecvObj;
 
+/* This function is the UART callback function
+ */
+static void uart_callback()
+{
+    //insert code here
+}
+
 /* This function sends commands to the correct cores to offload tasks
  */
 static void send_to_core(uint16_t RemoteCoreID, uint16_t RemoteEndPt, char buf[64])

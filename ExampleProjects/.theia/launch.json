@@ -132,6 +132,28 @@
                     ]
                 }
             ]
+        },
+        {
+            "name": "hwa_bfp_compression_awr294x-evm_c66ss0_nortos_ti-c6000",
+            "type": "ccs-debug",
+            "request": "launch",
+            "projectInfo": {
+                "name": "hwa_bfp_compression_awr294x-evm_c66ss0_nortos_ti-c6000",
+                "resourceId": "/hwa_bfp_compression_awr294x-evm_c66ss0_nortos_ti-c6000"
+            },
+            "connections": [
+                {
+                    "name": "Texas Instruments XDS110 USB Debug Probe",
+                    "cores": [
+                        {
+                            "name": "C66xx_DSP",
+                            "debuggerSettings": {
+                                "data": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<PropertyValues/>\n"
+                            }
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }
