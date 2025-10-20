@@ -11,6 +11,7 @@ GEN_CMDS__FLAG :=
 
 ORDERED_OBJS += \
 "./DSP.obj" \
+"./data_path.obj" \
 "./syscfg/ti_dpl_config.obj" \
 "./syscfg/ti_drivers_config.obj" \
 "./syscfg/ti_drivers_open_close.obj" \
@@ -25,10 +26,19 @@ ORDERED_OBJS += \
 "./main.obj" \
 "./objectdetection.obj" \
 "../linker.cmd" \
+"../mmw_dss_linker.cmd" \
 $(GEN_CMDS__FLAG) \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/dpm/lib/libdpm_awr2944.ae66" \
 -lfreertos.awr294x.c66.ti-c6000.debug.lib \
 -ldrivers.awr294x.c66.ti-c6000.debug.lib \
 -llibc.a \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpedma/lib/libdpedma_hwa_awr2944.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/utils/mathutils/lib/libmathutils.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/rangecfarprocDDMA/lib/librangecfarproc_hwa_ddma_awr2944.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/cfarproc/lib/libcfarproc_hwa_awr2944.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/dopplerproc/lib/libdopplerproc_hwa_awr2944.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/mmwave/lib/libmmwave_awr2944.ae66" \
+-l"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/rangeprocDDMA/lib/librangeproc_hwa_ddma_awr2944.ae66" \
 
 -include ../makefile.init
 
@@ -149,7 +159,7 @@ all: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 empty_awr294x-evm_c66ss0_freertos_ti-c6000.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: C6000 Linker'
-	"C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/bin/cl6x" -mv6600 --define=SOC_AWR294X --define=_DEBUG_=1 --define=INCLUDE_DPM --define=DRIVERS_RADAR_HWA_V2 --define=APP_RESOURCE_FILE='<'ti/demo/awr294x/mmw/mmw_resDDM.h'>' --define=SOC_AWR2944 -g --c99 --diag_warning=225 --diag_wrap=off --display_error_number --emit_warnings_as_errors --quiet --gen_func_subsections=on --assume_control_regs_read --mem_model:const=data --mem_model:data=far_aggregates --disable_push_pop --fp_mode=relaxed --remove_hooks_when_inlining --gen_opt_info=2 -z -m"empty.Debug.map" -i"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/lib" -i"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/lib" -i"C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/lib" --reread_libs --diag_wrap=off --display_error_number --emit_warnings_as_errors --warn_sections --xml_link_info="empty_awr294x-evm_c66ss0_freertos_ti-c6000_linkInfo.xml" --ram_model -o "empty_awr294x-evm_c66ss0_freertos_ti-c6000.out" $(ORDERED_OBJS)
+	"C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/bin/cl6x" -mv6600 --define=SOC_AWR294X --define=_DEBUG_=1 --define=INCLUDE_DPM --define=DRIVERS_RADAR_HWA_V2 --define=APP_RESOURCE_FILE='<'ti/demo/awr294x/mmw/mmw_resDDM.h'>' --define=SOC_AWR2944 -g --c99 --diag_warning=225 --diag_wrap=off --display_error_number --emit_warnings_as_errors --quiet --gen_func_subsections=on --assume_control_regs_read --mem_model:const=data --mem_model:data=far_aggregates --disable_push_pop --fp_mode=relaxed --remove_hooks_when_inlining --gen_opt_info=2 -z -m"empty.Debug.map" -i"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/lib" -i"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/lib" -i"C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/lib" -i"C:/ti/mmwave_mcuplus_sdk_04_07_01_04/dsplib_c66x_3_4_0_0/packages/ti/dsplib/lib" --reread_libs --diag_wrap=off --display_error_number --emit_warnings_as_errors --warn_sections --xml_link_info="empty_awr294x-evm_c66ss0_freertos_ti-c6000_linkInfo.xml" --ram_model -o "empty_awr294x-evm_c66ss0_freertos_ti-c6000.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -157,8 +167,8 @@ empty_awr294x-evm_c66ss0_freertos_ti-c6000.out: $(OBJS) $(CMD_SRCS) $(GEN_CMDS)
 # Other Targets
 clean:
 	-$(RM) $(GEN_MISC_FILES__QUOTED)$(GEN_FILES__QUOTED)$(EXE_OUTPUTS__QUOTED)
-	-$(RM) "DSP.obj" "syscfg\ti_dpl_config.obj" "syscfg\ti_drivers_config.obj" "syscfg\ti_drivers_open_close.obj" "syscfg\ti_pinmux_config.obj" "syscfg\ti_power_clock_config.obj" "syscfg\ti_board_config.obj" "syscfg\ti_board_open_close.obj" "syscfg\ti_enet_config.obj" "syscfg\ti_enet_open_close.obj" "syscfg\ti_enet_soc.obj" "syscfg\ti_enet_lwipif.obj" "main.obj" "objectdetection.obj" 
-	-$(RM) "DSP.d" "syscfg\ti_dpl_config.d" "syscfg\ti_drivers_config.d" "syscfg\ti_drivers_open_close.d" "syscfg\ti_pinmux_config.d" "syscfg\ti_power_clock_config.d" "syscfg\ti_board_config.d" "syscfg\ti_board_open_close.d" "syscfg\ti_enet_config.d" "syscfg\ti_enet_open_close.d" "syscfg\ti_enet_soc.d" "syscfg\ti_enet_lwipif.d" "main.d" "objectdetection.d" 
+	-$(RM) "DSP.obj" "data_path.obj" "syscfg\ti_dpl_config.obj" "syscfg\ti_drivers_config.obj" "syscfg\ti_drivers_open_close.obj" "syscfg\ti_pinmux_config.obj" "syscfg\ti_power_clock_config.obj" "syscfg\ti_board_config.obj" "syscfg\ti_board_open_close.obj" "syscfg\ti_enet_config.obj" "syscfg\ti_enet_open_close.obj" "syscfg\ti_enet_soc.obj" "syscfg\ti_enet_lwipif.obj" "main.obj" "objectdetection.obj" 
+	-$(RM) "DSP.d" "data_path.d" "syscfg\ti_dpl_config.d" "syscfg\ti_drivers_config.d" "syscfg\ti_drivers_open_close.d" "syscfg\ti_pinmux_config.d" "syscfg\ti_power_clock_config.d" "syscfg\ti_board_config.d" "syscfg\ti_board_open_close.d" "syscfg\ti_enet_config.d" "syscfg\ti_enet_open_close.d" "syscfg\ti_enet_soc.d" "syscfg\ti_enet_lwipif.d" "main.d" "objectdetection.d" 
 	-$(RMDIR) $(GEN_MISC_DIRS__QUOTED)
 	-@echo 'Finished clean'
 	-@echo ' '

@@ -121,7 +121,7 @@ MEMORY
     MSS_L2     : ORIGIN = 0x10260000 , LENGTH = 0x40000
 
     /* This is typically used to hold data IO buffers from accelerators like CSI, HWA, DSP */
-    DSS_L3:   ORIGIN = 0x88000000, LENGTH = 0x00200000
+    DSS_L3:   ORIGIN = 0x88000000, LENGTH = 0x00280000
 
     /* shared memories that are used by RTOS/NORTOS cores */
     /* On R5F,

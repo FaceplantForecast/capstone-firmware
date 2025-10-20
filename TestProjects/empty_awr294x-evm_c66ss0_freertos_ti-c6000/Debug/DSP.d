@@ -184,6 +184,41 @@ DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stdlib.
 DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/board/antenna_geometry.h
 DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stdlib.h
 DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/board/antenna_geometry.h
+DSP.obj: ../mmw_dss.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/HeapP.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/types.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/machine/endian.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/select.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_sigset.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_timeval.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/timespec.h
+DSP.obj: C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_timespec.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/FreeRTOS.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/config/awr294x/c66/FreeRTOSConfig.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/projdefs.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/portable.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/deprecated_definitions.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/portable/TI_CGT/DSP_C66/portmacro.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/mpu_wrappers.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/task.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/list.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/mmw_resDDM.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/include/mmw_output.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/mmwavelink.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_datatypes.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_device.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_protocol.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_sensor.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_monitoring.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_messages.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/include/mmw_config.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/mmwave/mmwave.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc/v1/crc.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/cslr_crc.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc/v1/hw_crc.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/dss/mmw_dss.h
+DSP.obj: C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/TaskP.h
 
 ../DSP.c:
 
@@ -552,4 +587,74 @@ C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/board/ant
 C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/stdlib.h:
 
 C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/board/antenna_geometry.h:
+
+../mmw_dss.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/HeapP.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/types.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/machine/endian.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/select.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_sigset.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_timeval.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/timespec.h:
+
+C:/ti/ccs2030/ccs/tools/compiler/ti-cgt-c6000_8.5.0.LTS/include/sys/_timespec.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/FreeRTOS.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/config/awr294x/c66/FreeRTOSConfig.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/projdefs.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/portable.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/deprecated_definitions.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/portable/TI_CGT/DSP_C66/portmacro.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/mpu_wrappers.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/task.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/FreeRTOS-Kernel/include/list.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/mmw_resDDM.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/include/mmw_output.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/mmwavelink.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_datatypes.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_device.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_protocol.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_sensor.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_monitoring.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_dfp_02_04_18_01/ti/control/mmwavelink/include/rl_messages.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/include/mmw_config.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/mmwave/mmwave.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc/v1/crc.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/hw_include/cslr_crc.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/crc/v1/hw_crc.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/demo/awr294x/mmw/dss/mmw_dss.h:
+
+C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/dpl/TaskP.h:
 

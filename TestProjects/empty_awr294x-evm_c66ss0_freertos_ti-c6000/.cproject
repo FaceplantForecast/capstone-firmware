@@ -4,11 +4,13 @@
         <cconfiguration id="com.ti.ccstudio.buildDefinitions.C6000.Debug.846482255">
             <storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.ti.ccstudio.buildDefinitions.C6000.Debug.846482255" moduleId="org.eclipse.cdt.core.settings" name="Debug">
                 <macros>
+                    <stringMacro name="C66x_MATHLIB_INSTALL_PATH" type="VALUE_PATH_ANY" value="C:/ti/mathlib_c66x_3_1_2_1"/>
                     <stringMacro name="MMWAVE_AWR294X_DFP_INSTALL_PATH" type="VALUE_PATH_ANY" value="${COM_TI_MMWAVE_MCUPLUS_SDK_INSTALL_DIR}/../mmwave_dfp_02_04_17_00"/>
                     <stringMacro name="MMWAVE_SDK_INSTALL_PATH" type="VALUE_PATH_ANY" value="${COM_TI_MMWAVE_MCUPLUS_SDK_INSTALL_DIR}"/>
                     <stringMacro name="MCU_PLUS_SDK_PATH" type="VALUE_PATH_ANY" value="${COM_TI_MCU_PLUS_SDK_AWR294X_INSTALL_DIR}"/>
                     <stringMacro name="C66x_DSPLIB_INSTALL_PATH" type="VALUE_PATH_ANY" value="C:/ti/dsplib_c66x_3_4_0_0"/>
-                    <stringMacro name="C66x_MATHLIB_INSTALL_PATH" type="VALUE_PATH_ANY" value="C:/ti/mathlib_c66x_3_1_2_1"/>
+                    <stringMacro name="dpmlib1" type="VALUE_PATH_FILE" value="C:\ti\mmwave_mcuplus_sdk_04_07_01_04\mmwave_mcuplus_sdk_04_07_01_04\ti\control\dpm\lib\libdpm_awr2944.ae66"/>
+                    <stringMacro name="dpmlib2" type="VALUE_PATH_FILE" value="C:\ti\mmwave_mcuplus_sdk_04_07_01_04\mmwave_mcuplus_sdk_04_07_01_04\ti\control\dpm\lib\libdpm_awr2944.aer5f"/>
                 </macros>
                 <externalSettings/>
                 <extensions>
@@ -108,8 +110,10 @@
                                     <listOptionValue value="${MCU_PLUS_SDK_PATH}/source/kernel/freertos/lib"/>
                                     <listOptionValue value="${MCU_PLUS_SDK_PATH}/source/drivers/lib"/>
                                     <listOptionValue value="${CG_TOOL_ROOT}/lib"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/dsplib_c66x_3_4_0_0/packages/ti/dsplib/lib"/>
                                 </option>
                                 <option id="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.LIBRARY.1343916855" superClass="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.LIBRARY" valueType="libs">
+                                    <listOptionValue value="${dpmlib1}"/>
                                     <listOptionValue value="${COM_TI_MATHLIB_C66X_LIBRARIES}"/>
                                     <listOptionValue value="${COM_TI_MAS_DSPLIB_C66X_LIBRARIES}"/>
                                     <listOptionValue value="${COM_TI_MMWAVE_MCUPLUS_SDK_LIBRARIES}"/>
@@ -118,6 +122,13 @@
                                     <listOptionValue value="freertos.awr294x.c66.ti-c6000.debug.lib"/>
                                     <listOptionValue value="drivers.awr294x.c66.ti-c6000.debug.lib"/>
                                     <listOptionValue value="libc.a"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpedma/lib/libdpedma_hwa_awr2944.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/utils/mathutils/lib/libmathutils.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/rangecfarprocDDMA/lib/librangecfarproc_hwa_ddma_awr2944.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/cfarproc/lib/libcfarproc_hwa_awr2944.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/dopplerproc/lib/libdopplerproc_hwa_awr2944.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/mmwave/lib/libmmwave_awr2944.ae66"/>
+                                    <listOptionValue value="C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/datapath/dpu/rangeprocDDMA/lib/librangeproc_hwa_ddma_awr2944.ae66"/>
                                 </option>
                                 <option id="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.EMIT_WARNINGS_AS_ERRORS.1958833707" superClass="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.EMIT_WARNINGS_AS_ERRORS" value="true" valueType="boolean"/>
                                 <option id="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.INITIALIZATION_MODEL.1326564228" superClass="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.INITIALIZATION_MODEL" value="com.ti.ccstudio.buildDefinitions.C6000_8.5.linkerID.INITIALIZATION_MODEL.RAM_MODEL" valueType="enumerated"/>

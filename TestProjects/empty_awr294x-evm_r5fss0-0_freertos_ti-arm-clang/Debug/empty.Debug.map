@@ -1,7 +1,7 @@
 ******************************************************************************
             TI ARM Clang Linker PC v4.0.3                      
 ******************************************************************************
->> Linked Mon Oct 20 13:19:39 2025
+>> Linked Mon Oct 20 17:16:49 2025
 
 OUTPUT FILE NAME:   <empty_awr294x-evm_r5fss0-0_freertos_ti-arm-clang.out>
 ENTRY POINT SYMBOL: "_vectors"  address: 00000000
@@ -19,7 +19,7 @@ MEMORY CONFIGURATION
   LOG_SHM_MEM           102ec000   00004000  00000000  00004000  RWIX
   MAILBOX_HSM           44000000   000003ce  00000000  000003ce  RWIX
   MAILBOX_R5F           44000400   000003ce  00000000  000003ce  RWIX
-  DSS_L3                88000000   00200000  00000000  00200000  RWIX
+  DSS_L3                88000000   00280000  00000000  00280000  RWIX
   RTOS_NORTOS_IPC_SHM_M c5000200   00001d40  000012c0  00000a80  RWIX
 
 

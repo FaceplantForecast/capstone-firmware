@@ -6,13 +6,15 @@ SHELL = cmd.exe
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CMD_SRCS += \
-../linker.cmd 
+../linker.cmd \
+../mmw_dss_linker.cmd 
 
 SYSCFG_SRCS += \
 ../example.syscfg 
 
 C_SRCS += \
 ../DSP.c \
+../data_path.c \
 ./syscfg/ti_dpl_config.c \
 ./syscfg/ti_drivers_config.c \
 ./syscfg/ti_drivers_open_close.c \
@@ -45,6 +47,7 @@ GEN_MISC_DIRS += \
 
 C_DEPS += \
 ./DSP.d \
+./data_path.d \
 ./syscfg/ti_dpl_config.d \
 ./syscfg/ti_drivers_config.d \
 ./syscfg/ti_drivers_open_close.d \
@@ -61,6 +64,7 @@ C_DEPS += \
 
 OBJS += \
 ./DSP.obj \
+./data_path.obj \
 ./syscfg/ti_dpl_config.obj \
 ./syscfg/ti_drivers_config.obj \
 ./syscfg/ti_drivers_open_close.obj \
@@ -90,6 +94,7 @@ GEN_MISC_DIRS__QUOTED += \
 
 OBJS__QUOTED += \
 "DSP.obj" \
+"data_path.obj" \
 "syscfg\ti_dpl_config.obj" \
 "syscfg\ti_drivers_config.obj" \
 "syscfg\ti_drivers_open_close.obj" \
@@ -116,6 +121,7 @@ GEN_MISC_FILES__QUOTED += \
 
 C_DEPS__QUOTED += \
 "DSP.d" \
+"data_path.d" \
 "syscfg\ti_dpl_config.d" \
 "syscfg\ti_drivers_config.d" \
 "syscfg\ti_drivers_open_close.d" \
@@ -145,6 +151,7 @@ GEN_FILES__QUOTED += \
 
 C_SRCS__QUOTED += \
 "../DSP.c" \
+"../data_path.c" \
 "./syscfg/ti_dpl_config.c" \
 "./syscfg/ti_drivers_config.c" \
 "./syscfg/ti_drivers_open_close.c" \

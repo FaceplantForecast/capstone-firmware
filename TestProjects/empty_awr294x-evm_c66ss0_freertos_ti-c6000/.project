@@ -45,5 +45,13 @@
 			<name>MMWAVE_SDK_INSTALL_PATH</name>
 			<value>$%7BCOM_TI_MMWAVE_MCUPLUS_SDK_INSTALL_DIR%7D</value>
 		</variable>
+		<variable>
+			<name>dpmlib1</name>
+			<value>file:/C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/dpm/lib/libdpm_awr2944.ae66</value>
+		</variable>
+		<variable>
+			<name>dpmlib2</name>
+			<value>file:/C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mmwave_mcuplus_sdk_04_07_01_04/ti/control/dpm/lib/libdpm_awr2944.aer5f</value>
+		</variable>
 	</variableList>
 </projectDescription>

@@ -1,4 +1,4 @@
-#ifndef ENUMS_H
+#ifndef ENUMS_H //makes sure it doesn't get repeatedly defined by multiple files
 #define ENUMS_H
 
 //enum for endpoints
