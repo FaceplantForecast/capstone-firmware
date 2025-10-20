@@ -50,6 +50,68 @@ void Drivers_close(void)
 }
 
 /*
+ * EDMA
+ */
+/* EDMA Driver handles */
+EDMA_Handle gEdmaHandle[CONFIG_EDMA_NUM_INSTANCES];
+
+/* EDMA Driver Open Parameters */
+EDMA_Params gEdmaParams[CONFIG_EDMA_NUM_INSTANCES] =
+{
+    {
+        .intrEnable = TRUE,
+        .errIntrEnable = FALSE,
+    },
+};
+
+void Drivers_edmaOpen(void)
+{
+    uint32_t instCnt;
+    int32_t  status = SystemP_SUCCESS;
+
+    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
+    {
+        gEdmaHandle[instCnt] = NULL;   /* Init to NULL so that we can exit gracefully */
+    }
+
+    /* Open all instances */
+    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
+    {
+        gEdmaHandle[instCnt] = EDMA_open(instCnt, &gEdmaParams[instCnt]);
+        if(NULL == gEdmaHandle[instCnt])
+        {
+            DebugP_logError("EDMA open failed for instance %d !!!\r\n", instCnt);
+            status = SystemP_FAILURE;
+            break;
+        }
+    }
+
+    if(SystemP_FAILURE == status)
+    {
+        Drivers_edmaClose();   /* Exit gracefully */
+    }
+
+    return;
+}
+
+void Drivers_edmaClose(void)
+{
+    uint32_t instCnt;
+
+    /* Close all instances that are open */
+    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
+    {
+        if(gEdmaHandle[instCnt] != NULL)
+        {
+            EDMA_close(gEdmaHandle[instCnt]);
+            gEdmaHandle[instCnt] = NULL;
+        }
+    }
+
+    return;
+}
+
+/*
  * UART
  */
 
@@ -118,68 +180,6 @@ void Drivers_uartClose(void)
         {
             UART_close(gUartHandle[instCnt]);
             gUartHandle[instCnt] = NULL;
-        }
-    }
-
-    return;
-}
-
-/*
- * EDMA
- */
-/* EDMA Driver handles */
-EDMA_Handle gEdmaHandle[CONFIG_EDMA_NUM_INSTANCES];
-
-/* EDMA Driver Open Parameters */
-EDMA_Params gEdmaParams[CONFIG_EDMA_NUM_INSTANCES] =
-{
-    {
-        .intrEnable = TRUE,
-        .errIntrEnable = FALSE,
-    },
-};
-
-void Drivers_edmaOpen(void)
-{
-    uint32_t instCnt;
-    int32_t  status = SystemP_SUCCESS;
-
-    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
-    {
-        gEdmaHandle[instCnt] = NULL;   /* Init to NULL so that we can exit gracefully */
-    }
-
-    /* Open all instances */
-    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
-    {
-        gEdmaHandle[instCnt] = EDMA_open(instCnt, &gEdmaParams[instCnt]);
-        if(NULL == gEdmaHandle[instCnt])
-        {
-            DebugP_logError("EDMA open failed for instance %d !!!\r\n", instCnt);
-            status = SystemP_FAILURE;
-            break;
-        }
-    }
-
-    if(SystemP_FAILURE == status)
-    {
-        Drivers_edmaClose();   /* Exit gracefully */
-    }
-
-    return;
-}
-
-void Drivers_edmaClose(void)
-{
-    uint32_t instCnt;
-
-    /* Close all instances that are open */
-    for(instCnt = 0U; instCnt < CONFIG_EDMA_NUM_INSTANCES; instCnt++)
-    {
-        if(gEdmaHandle[instCnt] != NULL)
-        {
-            EDMA_close(gEdmaHandle[instCnt]);
-            gEdmaHandle[instCnt] = NULL;
         }
     }
 

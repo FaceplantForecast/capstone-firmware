@@ -24,7 +24,8 @@ C_SRCS += \
 ./syscfg/ti_enet_open_close.c \
 ./syscfg/ti_enet_soc.c \
 ./syscfg/ti_enet_lwipif.c \
-../main.c 
+../main.c \
+../objectdetection.c 
 
 GEN_FILES += \
 ./syscfg/ti_dpl_config.c \
@@ -55,7 +56,8 @@ C_DEPS += \
 ./syscfg/ti_enet_open_close.d \
 ./syscfg/ti_enet_soc.d \
 ./syscfg/ti_enet_lwipif.d \
-./main.d 
+./main.d \
+./objectdetection.d 
 
 OBJS += \
 ./DSP.obj \
@@ -70,7 +72,8 @@ OBJS += \
 ./syscfg/ti_enet_open_close.obj \
 ./syscfg/ti_enet_soc.obj \
 ./syscfg/ti_enet_lwipif.obj \
-./main.obj 
+./main.obj \
+./objectdetection.obj 
 
 GEN_MISC_FILES += \
 ./syscfg/ti_dpl_config.h \
@@ -98,7 +101,8 @@ OBJS__QUOTED += \
 "syscfg\ti_enet_open_close.obj" \
 "syscfg\ti_enet_soc.obj" \
 "syscfg\ti_enet_lwipif.obj" \
-"main.obj" 
+"main.obj" \
+"objectdetection.obj" 
 
 GEN_MISC_FILES__QUOTED += \
 "syscfg\ti_dpl_config.h" \
@@ -123,7 +127,8 @@ C_DEPS__QUOTED += \
 "syscfg\ti_enet_open_close.d" \
 "syscfg\ti_enet_soc.d" \
 "syscfg\ti_enet_lwipif.d" \
-"main.d" 
+"main.d" \
+"objectdetection.d" 
 
 GEN_FILES__QUOTED += \
 "syscfg\ti_dpl_config.c" \
@@ -151,7 +156,8 @@ C_SRCS__QUOTED += \
 "./syscfg/ti_enet_open_close.c" \
 "./syscfg/ti_enet_soc.c" \
 "./syscfg/ti_enet_lwipif.c" \
-"../main.c" 
+"../main.c" \
+"../objectdetection.c" 
 
 SYSCFG_SRCS__QUOTED += \
 "../example.syscfg" 

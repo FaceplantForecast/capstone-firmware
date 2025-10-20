@@ -1,7 +1,7 @@
 ******************************************************************************
             TI ARM Clang Linker PC v4.0.3                      
 ******************************************************************************
->> Linked Thu Oct  2 22:02:32 2025
+>> Linked Mon Oct 20 13:19:39 2025
 
 OUTPUT FILE NAME:   <empty_awr294x-evm_r5fss0-0_freertos_ti-arm-clang.out>
 ENTRY POINT SYMBOL: "_vectors"  address: 00000000

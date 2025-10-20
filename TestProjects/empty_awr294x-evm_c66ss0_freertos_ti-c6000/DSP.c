@@ -36,8 +36,12 @@
 #include "ti_drivers_open_close.h"
 #include "ti_board_open_close.h"
 
-#include <C:\Users\there\Documents\Capstone\RadarFirmware\enums.h> //my custom universal values
 #include <string.h> //needed for string operations
+#include <C:\Users\there\Documents\Capstone\RadarFirmware\enums.h> //my custom universal values
+
+//Inclusions to use TI object detection framework
+#include <ti/control/dpm/dpm.h>
+#include <ti/datapath/dpc/objectdetection/objdethwaDDMA/objectdetection.h>
 
 
 //RPMessage objects

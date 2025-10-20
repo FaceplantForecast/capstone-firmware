@@ -51,26 +51,6 @@ void Drivers_open(void);
 void Drivers_close(void);
 
 /*
- * UART
- */
-#include <drivers/uart.h>
-
-/* UART Driver handles */
-extern UART_Handle gUartHandle[CONFIG_UART_NUM_INSTANCES];
-
-/*
- * UART Driver Advance Parameters - to be used only when Driver_open() and
- * Driver_close() is not used by the application
- */
-/* UART Driver Parameters */
-extern UART_Params gUartParams[CONFIG_UART_NUM_INSTANCES];
-/* UART Driver open/close - can be used by application when Driver_open() and
- * Driver_close() is not used directly and app wants to control the various driver
- * open/close sequences */
-void Drivers_uartOpen(void);
-void Drivers_uartClose(void);
-
-/*
  * EDMA
  */
 #include <drivers/edma.h>
@@ -89,6 +69,26 @@ extern EDMA_Params gEdmaParams[CONFIG_EDMA_NUM_INSTANCES];
  * open/close sequences */
 void Drivers_edmaOpen(void);
 void Drivers_edmaClose(void);
+
+/*
+ * UART
+ */
+#include <drivers/uart.h>
+
+/* UART Driver handles */
+extern UART_Handle gUartHandle[CONFIG_UART_NUM_INSTANCES];
+
+/*
+ * UART Driver Advance Parameters - to be used only when Driver_open() and
+ * Driver_close() is not used by the application
+ */
+/* UART Driver Parameters */
+extern UART_Params gUartParams[CONFIG_UART_NUM_INSTANCES];
+/* UART Driver open/close - can be used by application when Driver_open() and
+ * Driver_close() is not used directly and app wants to control the various driver
+ * open/close sequences */
+void Drivers_uartOpen(void);
+void Drivers_uartClose(void);
 
 
 #ifdef __cplusplus

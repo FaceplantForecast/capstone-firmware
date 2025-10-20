@@ -1,7 +1,7 @@
 ******************************************************************************
                TMS320C6x Linker PC v8.5.0                      
 ******************************************************************************
->> Linked Thu Oct  2 21:40:30 2025
+>> Linked Mon Oct 20 13:19:53 2025
 
 OUTPUT FILE NAME:   <empty_awr294x-evm_c66ss0_freertos_ti-c6000.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0081ce20
@@ -11,7 +11,7 @@ MEMORY CONFIGURATION
 
          name            origin    length      used     unused   attr    fill
 ----------------------  --------  ---------  --------  --------  ----  --------
-  DSS_L2                00800000   00060000  0003b198  00024e68  RWIX
+  DSS_L2                00800000   00060000  0003b1b8  00024e48  RWIX
   MAILBOX_HSM           44000000   000003ce  00000000  000003ce  RWIX
   MAILBOX_R5F           44000400   000003ce  00000000  000003ce  RWIX
   DSS_L3                88000000   00200000  00000000  00200000  RWIX
@@ -24,27 +24,27 @@ SEGMENT ALLOCATION MAP
 
 run origin  load origin   length   init length attrs members
 ----------  ----------- ---------- ----------- ----- -------
-00800000    00800000    000208a0   000208a0    r-x
+00800000    00800000    000208c0   000208c0    r-x
   00800000    00800000    00000200   00000200    r-x .text:vectors
-  00800200    00800200    000206a0   000206a0    r-x .text
-008208a0    008208a0    00016f00   00000000    rw-
-  008208a0    008208a0    0000af00   00000000    rw- .far
-  0082b7a0    0082b7a0    00008000   00000000    rw- .sysmem
-  008337a0    008337a0    00004000   00000000    rw- .stack
-008377a0    008377a0    00002aa0   00002aa0    r--
-  008377a0    008377a0    00002aa0   00002aa0    r-- .const
-0083a240    0083a240    00000b18   00000b18    rw-
-  0083a240    0083a240    00000b18   00000b18    rw- .fardata
-0083ad58    0083ad58    00000268   00000268    r--
-  0083ad58    0083ad58    00000268   00000268    r-- .switch
-0083afc0    0083afc0    00000120   00000000    rw-
-  0083afc0    0083afc0    00000120   00000000    rw- .cio
-0083b0e0    0083b0e0    00000008   00000008    r--
-  0083b0e0    0083b0e0    00000008   00000008    r-- .rodata
-0083b0e8    0083b0e8    00000018   00000018    rw-
-  0083b0e8    0083b0e8    00000018   00000018    rw- .bss
-0083b100    0083b100    00000098   00000098    rw-
-  0083b100    0083b100    00000098   00000098    rw- .neardata
+  00800200    00800200    000206c0   000206c0    r-x .text
+008208c0    008208c0    00016f00   00000000    rw-
+  008208c0    008208c0    0000af00   00000000    rw- .far
+  0082b7c0    0082b7c0    00008000   00000000    rw- .sysmem
+  008337c0    008337c0    00004000   00000000    rw- .stack
+008377c0    008377c0    00002aa0   00002aa0    r--
+  008377c0    008377c0    00002aa0   00002aa0    r-- .const
+0083a260    0083a260    00000b18   00000b18    rw-
+  0083a260    0083a260    00000b18   00000b18    rw- .fardata
+0083ad78    0083ad78    00000268   00000268    r--
+  0083ad78    0083ad78    00000268   00000268    r-- .switch
+0083afe0    0083afe0    00000120   00000000    rw-
+  0083afe0    0083afe0    00000120   00000000    rw- .cio
+0083b100    0083b100    00000008   00000008    r--
+  0083b100    0083b100    00000008   00000008    r-- .rodata
+0083b108    0083b108    00000018   00000018    rw-
+  0083b108    0083b108    00000018   00000018    rw- .bss
+0083b120    0083b120    00000098   00000098    rw-
+  0083b120    0083b120    00000098   00000098    rw- .neardata
 
 
 SECTION ALLOCATION MAP
@@ -56,7 +56,7 @@ section   page    origin      length       input sections
 *          0    00800000    00000200     
                   00800000    00000200     freertos.awr294x.c66.ti-c6000.debug.lib : port_hwi_vectors_freertos_asm.obj (.text:vectors)
 
-.text      0    00800200    000206a0     
+.text      0    00800200    000206c0     
                   00800200    00002160     rts6600_elf.lib : _scanfi.c.obj (.text:__TI_scanfi)
                   00802360    00002000                     : _printfi.c.obj (.text:__TI_printfi:__TI_printfi)
                   00804360    00000be0     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.text:_vsnprintf)
@@ -479,451 +479,451 @@ section   page    origin      length       input sections
                   0081ffc0    00000020     ti_drivers_open_close.obj (.text:Drivers_close)
                   0081ffe0    00000020     ti_drivers_open_close.obj (.text:Drivers_open)
                   00820000    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.text:EDMA_isInterruptEnabled)
-                  00820020    00000020                                            : edma.obj (.text:HW_RD_REG32_RAW)
-                  00820040    00000020                                            : edma.obj (.text:HW_WR_REG32_RAW)
-                  00820060    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : HwiP_c66.obj (.text:HwiP_disable)
-                  00820080    00000020                                             : HwiP_c66.obj (.text:HwiP_enable)
-                  008200a0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm0Dispatcher)
-                  008200c0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm1Dispatcher)
-                  008200e0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm2Dispatcher)
-                  00820100    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm3Dispatcher)
-                  00820120    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm10Dispatcher)
-                  00820140    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm11Dispatcher)
-                  00820160    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm4Dispatcher)
-                  00820180    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm5Dispatcher)
-                  008201a0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm6Dispatcher)
-                  008201c0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm7Dispatcher)
-                  008201e0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm8Dispatcher)
-                  00820200    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm9Dispatcher)
-                  00820220    00000020                                             : HwiP_c66.obj (.text:HwiP_restore)
-                  00820240    00000020                                             : port_hwi.obj (.text:Hwi_dispatchCore__I)
-                  00820260    00000020                                             : port_hwi.obj (.text:Hwi_switchFromBootStack)
-                  00820280    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1.obj (.text:IpcNotify_getSelfCoreId)
-                  008202a0    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_isCustomIpcConfigEnabled)
-                  008202c0    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_mailboxGetPendingIntr)
-                  008202e0    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_registerNonNotifyCallback)
-                  00820300    00000020                                            : mailbox.obj (.text:Mailbox_Params_init)
-                  00820320    00000020     ti_power_clock_config.obj (.text:PowerClock_init)
-                  00820340    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_rpmsg_vring.obj (.text:RPMessage_align)
-                  00820360    00000020                                            : ipc_rpmsg.obj (.text:RPMessage_queueReset)
-                  00820380    00000020                                            : soc.obj (.text:SOC_moduleClockEnable)
-                  008203a0    00000020                                            : soc.obj (.text:SOC_moduleSetClockFrequency)
-                  008203c0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : TaskP_freertos.obj (.text:TaskP_yield)
-                  008203e0    00000020                                             : port.obj (.text:Task_enter)
-                  00820400    00000020                                             : port.obj (.text:Task_exit)
-                  00820420    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.text:UART_disableTxDma)
-                  00820440    00000020                                            : uart_sci_edma.obj (.text:UART_enableTxDma)
-                  00820460    00000020                                            : uart_sci.obj (.text:UART_isRxIntrEnabled)
-                  00820480    00000020                                            : uart_sci.obj (.text:UART_isTxIntrEnabled)
-                  008204a0    00000020                                            : uart_sci.obj (.text:UART_isTxRdy)
-                  008204c0    00000020                                            : uart_sci.obj (.text:UART_rxIntrDisable)
-                  008204e0    00000020                                            : uart_sci.obj (.text:UART_txIntrDisable)
-                  00820500    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port_tasksupport.obj (.text:_TaskSupport_glue)
-                  00820520    00000020     rts6600_elf.lib : errno.c.obj (.text:__c6xabi_errno_addr)
-                  00820540    00000020                     : push.asm.obj (.text:__pop_rts)
-                  00820560    00000020                     : push.asm.obj (.text:__push_rts)
-                  00820580    00000020                     : sscanf.c.obj (.text:_inpchar)
-                  008205a0    00000020                     : _lock.c.obj (.text:_nop)
-                  008205c0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.text:_out_null)
-                  008205e0    00000020     rts6600_elf.lib : signbit.c.obj (.text:_signbit)
-                  00820600    00000020                     : startup.c.obj (.text:_system_post_cinit)
-                  00820620    00000020                     : pre_init.c.obj (.text:_system_pre_init)
-                  00820640    00000020                     : sscanf.c.obj (.text:_uninpchar)
-                  00820660    00000020                     : exit.c.obj (.text:abort)
-                  00820680    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port_hwi_vectors_freertos_asm.obj (.text)
-                  008206a0    00000020     main.obj (.text:freertos_main)
-                  008206c0    00000020     rts6600_elf.lib : memory.c.obj (.text:malloc)
-                  008206e0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.text:prvTaskExitError)
-                  00820700    00000020     rts6600_elf.lib : fputc.c.obj (.text:putchar)
-                  00820720    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.text:uiPortGetRunTimeCounterValue)
-                  00820740    00000020                                             : list.obj (.text:vListInitialiseItem)
-                  00820760    00000020                                             : port.obj (.text:vPortConfigTimerForRunTimeStats)
-                  00820780    00000020                                             : port.obj (.text:vPortEnterCritical)
-                  008207a0    00000020                                             : port.obj (.text:vPortExitCritical)
-                  008207c0    00000020                                             : port.obj (.text:vPortRestoreTaskContext)
-                  008207e0    00000020                                             : port.obj (.text:vPortSuppressTicksAndSleep)
-                  00820800    00000020                                             : port.obj (.text:vPortValidateInterruptPriority)
-                  00820820    00000020                                             : tasks.obj (.text:vTaskMissedYield)
-                  00820840    00000020                                             : tasks.obj (.text:vTaskSuspendAll)
-                  00820860    00000020                                             : tasks.obj (.text:xTaskGetCurrentTaskHandle)
-                  00820880    00000020                                             : tasks.obj (.text:xTaskGetTickCount)
+                  00820020    00000020                                            : hwa.obj (.text:HWA_init)
+                  00820040    00000020                                            : edma.obj (.text:HW_RD_REG32_RAW)
+                  00820060    00000020                                            : edma.obj (.text:HW_WR_REG32_RAW)
+                  00820080    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : HwiP_c66.obj (.text:HwiP_disable)
+                  008200a0    00000020                                             : HwiP_c66.obj (.text:HwiP_enable)
+                  008200c0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm0Dispatcher)
+                  008200e0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm1Dispatcher)
+                  00820100    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm2Dispatcher)
+                  00820120    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcEcm3Dispatcher)
+                  00820140    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm10Dispatcher)
+                  00820160    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm11Dispatcher)
+                  00820180    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm4Dispatcher)
+                  008201a0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm5Dispatcher)
+                  008201c0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm6Dispatcher)
+                  008201e0    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm7Dispatcher)
+                  00820200    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm8Dispatcher)
+                  00820220    00000020                                             : HwiP_c66_handlers_freertos.obj (.text:HwiP_intcdm9Dispatcher)
+                  00820240    00000020                                             : HwiP_c66.obj (.text:HwiP_restore)
+                  00820260    00000020                                             : port_hwi.obj (.text:Hwi_dispatchCore__I)
+                  00820280    00000020                                             : port_hwi.obj (.text:Hwi_switchFromBootStack)
+                  008202a0    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1.obj (.text:IpcNotify_getSelfCoreId)
+                  008202c0    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_isCustomIpcConfigEnabled)
+                  008202e0    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_mailboxGetPendingIntr)
+                  00820300    00000020                                            : ipc_notify_v1.obj (.text:IpcNotify_registerNonNotifyCallback)
+                  00820320    00000020                                            : mailbox.obj (.text:Mailbox_Params_init)
+                  00820340    00000020     ti_power_clock_config.obj (.text:PowerClock_init)
+                  00820360    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_rpmsg_vring.obj (.text:RPMessage_align)
+                  00820380    00000020                                            : ipc_rpmsg.obj (.text:RPMessage_queueReset)
+                  008203a0    00000020                                            : soc.obj (.text:SOC_moduleClockEnable)
+                  008203c0    00000020                                            : soc.obj (.text:SOC_moduleSetClockFrequency)
+                  008203e0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : TaskP_freertos.obj (.text:TaskP_yield)
+                  00820400    00000020                                             : port.obj (.text:Task_enter)
+                  00820420    00000020                                             : port.obj (.text:Task_exit)
+                  00820440    00000020     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.text:UART_disableTxDma)
+                  00820460    00000020                                            : uart_sci_edma.obj (.text:UART_enableTxDma)
+                  00820480    00000020                                            : uart_sci.obj (.text:UART_isRxIntrEnabled)
+                  008204a0    00000020                                            : uart_sci.obj (.text:UART_isTxIntrEnabled)
+                  008204c0    00000020                                            : uart_sci.obj (.text:UART_isTxRdy)
+                  008204e0    00000020                                            : uart_sci.obj (.text:UART_rxIntrDisable)
+                  00820500    00000020                                            : uart_sci.obj (.text:UART_txIntrDisable)
+                  00820520    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port_tasksupport.obj (.text:_TaskSupport_glue)
+                  00820540    00000020     rts6600_elf.lib : errno.c.obj (.text:__c6xabi_errno_addr)
+                  00820560    00000020                     : push.asm.obj (.text:__pop_rts)
+                  00820580    00000020                     : push.asm.obj (.text:__push_rts)
+                  008205a0    00000020                     : sscanf.c.obj (.text:_inpchar)
+                  008205c0    00000020                     : _lock.c.obj (.text:_nop)
+                  008205e0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.text:_out_null)
+                  00820600    00000020     rts6600_elf.lib : signbit.c.obj (.text:_signbit)
+                  00820620    00000020                     : startup.c.obj (.text:_system_post_cinit)
+                  00820640    00000020                     : pre_init.c.obj (.text:_system_pre_init)
+                  00820660    00000020                     : sscanf.c.obj (.text:_uninpchar)
+                  00820680    00000020                     : exit.c.obj (.text:abort)
+                  008206a0    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port_hwi_vectors_freertos_asm.obj (.text)
+                  008206c0    00000020     main.obj (.text:freertos_main)
+                  008206e0    00000020     rts6600_elf.lib : memory.c.obj (.text:malloc)
+                  00820700    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.text:prvTaskExitError)
+                  00820720    00000020     rts6600_elf.lib : fputc.c.obj (.text:putchar)
+                  00820740    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.text:uiPortGetRunTimeCounterValue)
+                  00820760    00000020                                             : list.obj (.text:vListInitialiseItem)
+                  00820780    00000020                                             : port.obj (.text:vPortConfigTimerForRunTimeStats)
+                  008207a0    00000020                                             : port.obj (.text:vPortEnterCritical)
+                  008207c0    00000020                                             : port.obj (.text:vPortExitCritical)
+                  008207e0    00000020                                             : port.obj (.text:vPortRestoreTaskContext)
+                  00820800    00000020                                             : port.obj (.text:vPortSuppressTicksAndSleep)
+                  00820820    00000020                                             : port.obj (.text:vPortValidateInterruptPriority)
+                  00820840    00000020                                             : tasks.obj (.text:vTaskMissedYield)
+                  00820860    00000020                                             : tasks.obj (.text:vTaskSuspendAll)
+                  00820880    00000020                                             : tasks.obj (.text:xTaskGetCurrentTaskHandle)
+                  008208a0    00000020                                             : tasks.obj (.text:xTaskGetTickCount)
 
-.const     0    008377a0    00002aa0     
-                  008377a0    00000568     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string)
-                  00837d08    0000053c                                             : queue.obj (.const:.string)
-                  00838244    00000374     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_rpmsg.obj (.const:.string)
-                  008385b8    00000344                                            : soc_rcm.obj (.const:.string)
-                  008388fc    00000004     --HOLE-- [fill = 0]
-                  00838900    000001a4                                            : soc_rcm.obj (.const:gSocRcmClkSrcInfoMap)
-                  00838aa4    00000004     --HOLE-- [fill = 0]
-                  00838aa8    00000188                                            : soc_rcm.obj (.const:gSocRcmADPLLJConfigTbl)
-                  00838c30    00000150     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string)
-                  00838d80    00000124     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1.obj (.const:.string)
-                  00838ea4    00000104     freertos.awr294x.c66.ti-c6000.debug.lib : ClockP_freertos_c66.obj (.const:.string)
-                  00838fa8    00000101     rts6600_elf.lib : ctype.c.obj (.const:.string:_ctypes_)
-                  008390a9    00000003     --HOLE-- [fill = 0]
-                  008390ac    000000c0     freertos.awr294x.c66.ti-c6000.debug.lib : TimerP_rti.obj (.const:.string)
-                  0083916c    000000a8     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.const:.string)
-                  00839214    000000a8     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.const:.string)
-                  008392bc    00000094     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string)
-                  00839350    00000088     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string)
-                  008393d8    00000080     rts6600_elf.lib : strtod.c.obj (.const:digits)
-                  00839458    0000006c     ti_drivers_open_close.obj (.const:.string)
-                  008394c4    00000058     DSP.obj (.const:.string)
-                  0083951c    00000050     ti_drivers_config.obj (.const:.string)
-                  0083956c    00000004     --HOLE-- [fill = 0]
-                  00839570    00000050     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.const:pow10$1)
-                  008395c0    00000048     rts6600_elf.lib : strtod.c.obj (.const:powerof10)
-                  00839608    00000040     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.const:.string)
-                  00839648    0000003c                                            : ipc_notify_v1_cfg.obj (.const:.string)
-                  00839684    0000003c                                            : ipc_rpmsg_vring.obj (.const:.string)
-                  008396c0    00000034     main.obj (.const:.string)
-                  008396f4    00000004     --HOLE-- [fill = 0]
-                  008396f8    00000034     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmPeripheralClkSrcInfoMap)
-                  0083972c    00000030                                            : mailbox.obj (.const:.string)
-                  0083975c    00000030     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_log.obj (.const:.string)
-                  0083978c    00000004     --HOLE-- [fill = 0]
-                  00839790    0000002c     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmHsDivMuxClkSrcInfoMap)
-                  008397bc    00000004     --HOLE-- [fill = 0]
-                  008397c0    00000028                                            : soc_rcm.obj (.const:gSocRcmFixedClocksTbl)
-                  008397e8    00000024                                            : edma.obj (.const:.string:$P$T18$19)
-                  0083980c    00000004     --HOLE-- [fill = 0]
-                  00839810    00000024     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T28$29)
-                  00839834    00000024     rts6600_elf.lib : _printfi.c.obj (.const:.string)
-                  00839858    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T19$20)
-                  00839878    0000001f     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T1$2)
-                  00839897    00000001     --HOLE-- [fill = 0]
-                  00839898    0000001e     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.const:.string:$P$T0$1)
-                  008398b6    00000002     --HOLE-- [fill = 0]
-                  008398b8    0000001c     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.const:.string:$P$T1$2)
-                  008398d4    00000004     --HOLE-- [fill = 0]
-                  008398d8    0000001c                                            : soc_rcm.obj (.const:.string:$P$T6$7)
+.const     0    008377c0    00002aa0     
+                  008377c0    00000568     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string)
+                  00837d28    0000053c                                             : queue.obj (.const:.string)
+                  00838264    00000374     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_rpmsg.obj (.const:.string)
+                  008385d8    00000344                                            : soc_rcm.obj (.const:.string)
+                  0083891c    00000004     --HOLE-- [fill = 0]
+                  00838920    000001a4                                            : soc_rcm.obj (.const:gSocRcmClkSrcInfoMap)
+                  00838ac4    00000004     --HOLE-- [fill = 0]
+                  00838ac8    00000188                                            : soc_rcm.obj (.const:gSocRcmADPLLJConfigTbl)
+                  00838c50    00000150     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string)
+                  00838da0    00000124     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1.obj (.const:.string)
+                  00838ec4    00000104     freertos.awr294x.c66.ti-c6000.debug.lib : ClockP_freertos_c66.obj (.const:.string)
+                  00838fc8    00000101     rts6600_elf.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  008390c9    00000003     --HOLE-- [fill = 0]
+                  008390cc    000000c0     freertos.awr294x.c66.ti-c6000.debug.lib : TimerP_rti.obj (.const:.string)
+                  0083918c    000000a8     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.const:.string)
+                  00839234    000000a8     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.const:.string)
+                  008392dc    00000094     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string)
+                  00839370    00000088     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string)
+                  008393f8    00000080     rts6600_elf.lib : strtod.c.obj (.const:digits)
+                  00839478    0000006c     ti_drivers_open_close.obj (.const:.string)
+                  008394e4    00000058     DSP.obj (.const:.string)
+                  0083953c    00000050     ti_drivers_config.obj (.const:.string)
+                  0083958c    00000004     --HOLE-- [fill = 0]
+                  00839590    00000050     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.const:pow10$1)
+                  008395e0    00000048     rts6600_elf.lib : strtod.c.obj (.const:powerof10)
+                  00839628    00000040     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.const:.string)
+                  00839668    0000003c                                            : ipc_notify_v1_cfg.obj (.const:.string)
+                  008396a4    0000003c                                            : ipc_rpmsg_vring.obj (.const:.string)
+                  008396e0    00000034     main.obj (.const:.string)
+                  00839714    00000004     --HOLE-- [fill = 0]
+                  00839718    00000034     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmPeripheralClkSrcInfoMap)
+                  0083974c    00000030                                            : mailbox.obj (.const:.string)
+                  0083977c    00000030     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_log.obj (.const:.string)
+                  008397ac    00000004     --HOLE-- [fill = 0]
+                  008397b0    0000002c     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmHsDivMuxClkSrcInfoMap)
+                  008397dc    00000004     --HOLE-- [fill = 0]
+                  008397e0    00000028                                            : soc_rcm.obj (.const:gSocRcmFixedClocksTbl)
+                  00839808    00000024                                            : edma.obj (.const:.string:$P$T18$19)
+                  0083982c    00000004     --HOLE-- [fill = 0]
+                  00839830    00000024     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T28$29)
+                  00839854    00000024     rts6600_elf.lib : _printfi.c.obj (.const:.string)
+                  00839878    00000020     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T19$20)
+                  00839898    0000001f     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T1$2)
+                  008398b7    00000001     --HOLE-- [fill = 0]
+                  008398b8    0000001e     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.const:.string:$P$T0$1)
+                  008398d6    00000002     --HOLE-- [fill = 0]
+                  008398d8    0000001c     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.const:.string:$P$T1$2)
                   008398f4    00000004     --HOLE-- [fill = 0]
-                  008398f8    0000001b     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string:$P$T0$1)
-                  00839913    00000005     --HOLE-- [fill = 0]
-                  00839918    0000001b                                             : timers.obj (.const:.string:$P$T11$13)
+                  008398f8    0000001c                                            : soc_rcm.obj (.const:.string:$P$T6$7)
+                  00839914    00000004     --HOLE-- [fill = 0]
+                  00839918    0000001b     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string:$P$T0$1)
                   00839933    00000005     --HOLE-- [fill = 0]
-                  00839938    0000001b     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T21$22)
+                  00839938    0000001b                                             : timers.obj (.const:.string:$P$T11$13)
                   00839953    00000005     --HOLE-- [fill = 0]
-                  00839958    0000001a     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T1$2)
-                  00839972    00000006     --HOLE-- [fill = 0]
-                  00839978    0000001a     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T12$13)
+                  00839958    0000001b     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T21$22)
+                  00839973    00000005     --HOLE-- [fill = 0]
+                  00839978    0000001a     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T1$2)
                   00839992    00000006     --HOLE-- [fill = 0]
-                  00839998    0000001a     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string:$P$T2$3)
+                  00839998    0000001a     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T12$13)
                   008399b2    00000006     --HOLE-- [fill = 0]
-                  008399b8    0000001a     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmCpswClkSrcValMap)
+                  008399b8    0000001a     freertos.awr294x.c66.ti-c6000.debug.lib : SemaphoreP_freertos.obj (.const:.string:$P$T2$3)
                   008399d2    00000006     --HOLE-- [fill = 0]
-                  008399d8    0000001a                                            : soc_rcm.obj (.const:gSocRcmCptsClkSrcValMap)
+                  008399d8    0000001a     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmCpswClkSrcValMap)
                   008399f2    00000006     --HOLE-- [fill = 0]
-                  008399f8    0000001a                                            : soc_rcm.obj (.const:gSocRcmCsiRxClkSrcValMap)
+                  008399f8    0000001a                                            : soc_rcm.obj (.const:gSocRcmCptsClkSrcValMap)
                   00839a12    00000006     --HOLE-- [fill = 0]
-                  00839a18    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssHwaClkSrcValMap)
+                  00839a18    0000001a                                            : soc_rcm.obj (.const:gSocRcmCsiRxClkSrcValMap)
                   00839a32    00000006     --HOLE-- [fill = 0]
-                  00839a38    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssRtiClkSrcValMap)
+                  00839a38    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssHwaClkSrcValMap)
                   00839a52    00000006     --HOLE-- [fill = 0]
-                  00839a58    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssSciClkSrcValMap)
+                  00839a58    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssRtiClkSrcValMap)
                   00839a72    00000006     --HOLE-- [fill = 0]
-                  00839a78    0000001a                                            : soc_rcm.obj (.const:gSocRcmI2CClkSrcValMap)
+                  00839a78    0000001a                                            : soc_rcm.obj (.const:gSocRcmDssSciClkSrcValMap)
                   00839a92    00000006     --HOLE-- [fill = 0]
-                  00839a98    0000001a                                            : soc_rcm.obj (.const:gSocRcmMcanClkSrcValMap)
+                  00839a98    0000001a                                            : soc_rcm.obj (.const:gSocRcmI2CClkSrcValMap)
                   00839ab2    00000006     --HOLE-- [fill = 0]
-                  00839ab8    0000001a                                            : soc_rcm.obj (.const:gSocRcmQspiClkSrcValMap)
+                  00839ab8    0000001a                                            : soc_rcm.obj (.const:gSocRcmMcanClkSrcValMap)
                   00839ad2    00000006     --HOLE-- [fill = 0]
-                  00839ad8    0000001a                                            : soc_rcm.obj (.const:gSocRcmRtiClkSrcValMap)
+                  00839ad8    0000001a                                            : soc_rcm.obj (.const:gSocRcmQspiClkSrcValMap)
                   00839af2    00000006     --HOLE-- [fill = 0]
-                  00839af8    0000001a                                            : soc_rcm.obj (.const:gSocRcmSciClkSrcValMap)
+                  00839af8    0000001a                                            : soc_rcm.obj (.const:gSocRcmRtiClkSrcValMap)
                   00839b12    00000006     --HOLE-- [fill = 0]
-                  00839b18    0000001a                                            : soc_rcm.obj (.const:gSocRcmSpiClkSrcValMap)
+                  00839b18    0000001a                                            : soc_rcm.obj (.const:gSocRcmSciClkSrcValMap)
                   00839b32    00000006     --HOLE-- [fill = 0]
-                  00839b38    00000019                                            : ipc_notify_v1.obj (.const:.string:$P$T1$2)
-                  00839b51    00000007     --HOLE-- [fill = 0]
-                  00839b58    00000019     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T20$21)
+                  00839b38    0000001a                                            : soc_rcm.obj (.const:gSocRcmSpiClkSrcValMap)
+                  00839b52    00000006     --HOLE-- [fill = 0]
+                  00839b58    00000019                                            : ipc_notify_v1.obj (.const:.string:$P$T1$2)
                   00839b71    00000007     --HOLE-- [fill = 0]
-                  00839b78    00000019                                             : queue.obj (.const:.string:$P$T3$4)
+                  00839b78    00000019     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T20$21)
                   00839b91    00000007     --HOLE-- [fill = 0]
-                  00839b98    00000019                                             : queue.obj (.const:.string:$P$T4$5)
+                  00839b98    00000019                                             : queue.obj (.const:.string:$P$T3$4)
                   00839bb1    00000007     --HOLE-- [fill = 0]
-                  00839bb8    00000019                                             : queue.obj (.const:.string:$P$T8$9)
+                  00839bb8    00000019                                             : queue.obj (.const:.string:$P$T4$5)
                   00839bd1    00000007     --HOLE-- [fill = 0]
-                  00839bd8    00000018     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.const:.string:$P$T0$1)
-                  00839bf0    00000018     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T27$28)
-                  00839c08    00000018     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T7$8)
-                  00839c20    00000017     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T10$11)
-                  00839c37    00000001     --HOLE-- [fill = 0]
-                  00839c38    00000017     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T18$19)
-                  00839c4f    00000001     --HOLE-- [fill = 0]
-                  00839c50    00000017                                            : soc_rcm.obj (.const:.string:$P$T5$6)
-                  00839c67    00000001     --HOLE-- [fill = 0]
-                  00839c68    00000016     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T0$1)
-                  00839c7e    00000002     --HOLE-- [fill = 0]
-                  00839c80    00000016     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T16$17)
-                  00839c96    00000002     --HOLE-- [fill = 0]
-                  00839c98    00000016     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T17$18)
-                  00839cae    00000002     --HOLE-- [fill = 0]
-                  00839cb0    00000016     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T20$21)
-                  00839cc6    00000002     --HOLE-- [fill = 0]
-                  00839cc8    00000016                                            : soc_rcm.obj (.const:gSocRcmPllCoreOut2HSDivClkSrcValMap)
-                  00839cde    00000002     --HOLE-- [fill = 0]
-                  00839ce0    00000016                                            : soc_rcm.obj (.const:gSocRcmPllDspOut1HSDivClkSrcValMap)
-                  00839cf6    00000002     --HOLE-- [fill = 0]
-                  00839cf8    00000016                                            : soc_rcm.obj (.const:gSocRcmPllDspOut2HSDivClkSrcValMap)
-                  00839d0e    00000002     --HOLE-- [fill = 0]
-                  00839d10    00000016                                            : soc_rcm.obj (.const:gSocRcmPllPerOut1HSDivClkSrcValMap)
-                  00839d26    00000002     --HOLE-- [fill = 0]
-                  00839d28    00000015                                            : ipc_rpmsg_vring.obj (.const:.string:$P$T0$1)
-                  00839d3d    00000003     --HOLE-- [fill = 0]
-                  00839d40    00000015     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T1$2)
-                  00839d55    00000003     --HOLE-- [fill = 0]
-                  00839d58    00000015                                             : queue.obj (.const:.string:$P$T13$14)
-                  00839d6d    00000003     --HOLE-- [fill = 0]
-                  00839d70    00000015                                             : tasks.obj (.const:.string:$P$T23$24)
-                  00839d85    00000003     --HOLE-- [fill = 0]
-                  00839d88    00000015                                             : timers.obj (.const:.string:$P$T3$4)
-                  00839d9d    00000003     --HOLE-- [fill = 0]
-                  00839da0    00000015     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T8$9)
-                  00839db5    00000003     --HOLE-- [fill = 0]
-                  00839db8    00000015                                            : uart_sci.obj (.const:.string:$P$T9$10)
-                  00839dcd    00000003     --HOLE-- [fill = 0]
-                  00839dd0    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T11$12)
-                  00839de4    00000004     --HOLE-- [fill = 0]
-                  00839de8    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.const:.string:$P$T12$13)
-                  00839dfc    00000004     --HOLE-- [fill = 0]
-                  00839e00    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T12$14)
-                  00839e14    00000004     --HOLE-- [fill = 0]
-                  00839e18    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T14$15)
-                  00839e2c    00000004     --HOLE-- [fill = 0]
-                  00839e30    00000014                                            : uart_sci.obj (.const:.string:$P$T15$16)
-                  00839e44    00000004     --HOLE-- [fill = 0]
-                  00839e48    00000014                                            : ipc_rpmsg.obj (.const:.string:$P$T3$4)
-                  00839e5c    00000004     --HOLE-- [fill = 0]
-                  00839e60    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T9$10)
-                  00839e74    00000014                                             : printf.obj (.const:.string)
-                  00839e88    00000013                                             : queue.obj (.const:.string:$P$T0$1)
-                  00839e9b    00000005     --HOLE-- [fill = 0]
-                  00839ea0    00000013                                             : port.obj (.const:.string:$P$T1$2)
-                  00839eb3    00000005     --HOLE-- [fill = 0]
-                  00839eb8    00000013                                             : tasks.obj (.const:.string:$P$T15$16)
-                  00839ecb    00000005     --HOLE-- [fill = 0]
-                  00839ed0    00000013                                             : tasks.obj (.const:.string:$P$T16$17)
-                  00839ee3    00000005     --HOLE-- [fill = 0]
-                  00839ee8    00000013     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T17$18)
-                  00839efb    00000005     --HOLE-- [fill = 0]
-                  00839f00    00000013                                            : uart_sci.obj (.const:.string:$P$T8$9)
-                  00839f13    00000005     --HOLE-- [fill = 0]
-                  00839f18    00000012                                            : ipc_notify_v1.obj (.const:.string:$P$T0$1)
-                  00839f2a    00000006     --HOLE-- [fill = 0]
-                  00839f30    00000012                                            : uart_sci_edma.obj (.const:.string:$P$T0$1)
-                  00839f42    00000006     --HOLE-- [fill = 0]
-                  00839f48    00000012     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T0$1)
-                  00839f5a    00000006     --HOLE-- [fill = 0]
-                  00839f60    00000012     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.const:.string:$P$T1$2)
-                  00839f72    00000006     --HOLE-- [fill = 0]
-                  00839f78    00000012                                            : uart_sci.obj (.const:.string:$P$T11$12)
-                  00839f8a    00000006     --HOLE-- [fill = 0]
-                  00839f90    00000012                                            : soc_rcm.obj (.const:.string:$P$T15$16)
-                  00839fa2    00000006     --HOLE-- [fill = 0]
-                  00839fa8    00000012                                            : soc_rcm.obj (.const:.string:$P$T19$20)
-                  00839fba    00000006     --HOLE-- [fill = 0]
-                  00839fc0    00000012                                            : edma.obj (.const:.string:$P$T3$4)
-                  00839fd2    00000006     --HOLE-- [fill = 0]
-                  00839fd8    00000012     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T7$8)
-                  00839fea    00000006     --HOLE-- [fill = 0]
-                  00839ff0    00000012                                             : queue.obj (.const:.string:$P$T9$10)
-                  0083a002    00000006     --HOLE-- [fill = 0]
-                  0083a008    00000011     ti_drivers_open_close.obj (.const:.string:$P$T0$1)
-                  0083a019    00000007     --HOLE-- [fill = 0]
-                  0083a020    00000011     ti_drivers_open_close.obj (.const:.string:$P$T1$2)
-                  0083a031    00000007     --HOLE-- [fill = 0]
-                  0083a038    00000011     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T19$20)
-                  0083a049    00000007     --HOLE-- [fill = 0]
-                  0083a050    00000011                                            : edma.obj (.const:.string:$P$T7$8)
-                  0083a061    00000007     --HOLE-- [fill = 0]
-                  0083a068    00000011                                            : uart_sci.obj (.const:.string:$P$T7$8)
-                  0083a079    00000007     --HOLE-- [fill = 0]
-                  0083a080    00000010                                            : edma.obj (.const:.string:$P$T11$12)
-                  0083a090    00000010     rts6600_elf.lib : _scanfi.c.obj (.const:.string)
-                  0083a0a0    00000010     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmXTALInfo)
-                  0083a0b0    0000000f                                            : ipc_rpmsg.obj (.const:.string:$P$T0$1)
-                  0083a0bf    00000001     --HOLE-- [fill = 0]
-                  0083a0c0    0000000f                                            : ipc_rpmsg.obj (.const:.string:$P$T1$2)
-                  0083a0cf    00000001     --HOLE-- [fill = 0]
-                  0083a0d0    0000000f     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T10$11)
+                  00839bd8    00000019                                             : queue.obj (.const:.string:$P$T8$9)
+                  00839bf1    00000007     --HOLE-- [fill = 0]
+                  00839bf8    00000018     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.const:.string:$P$T0$1)
+                  00839c10    00000018     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T27$28)
+                  00839c28    00000018     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T7$8)
+                  00839c40    00000017     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T10$11)
+                  00839c57    00000001     --HOLE-- [fill = 0]
+                  00839c58    00000017     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T18$19)
+                  00839c6f    00000001     --HOLE-- [fill = 0]
+                  00839c70    00000017                                            : soc_rcm.obj (.const:.string:$P$T5$6)
+                  00839c87    00000001     --HOLE-- [fill = 0]
+                  00839c88    00000016     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T0$1)
+                  00839c9e    00000002     --HOLE-- [fill = 0]
+                  00839ca0    00000016     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T16$17)
+                  00839cb6    00000002     --HOLE-- [fill = 0]
+                  00839cb8    00000016     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T17$18)
+                  00839cce    00000002     --HOLE-- [fill = 0]
+                  00839cd0    00000016     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T20$21)
+                  00839ce6    00000002     --HOLE-- [fill = 0]
+                  00839ce8    00000016                                            : soc_rcm.obj (.const:gSocRcmPllCoreOut2HSDivClkSrcValMap)
+                  00839cfe    00000002     --HOLE-- [fill = 0]
+                  00839d00    00000016                                            : soc_rcm.obj (.const:gSocRcmPllDspOut1HSDivClkSrcValMap)
+                  00839d16    00000002     --HOLE-- [fill = 0]
+                  00839d18    00000016                                            : soc_rcm.obj (.const:gSocRcmPllDspOut2HSDivClkSrcValMap)
+                  00839d2e    00000002     --HOLE-- [fill = 0]
+                  00839d30    00000016                                            : soc_rcm.obj (.const:gSocRcmPllPerOut1HSDivClkSrcValMap)
+                  00839d46    00000002     --HOLE-- [fill = 0]
+                  00839d48    00000015                                            : ipc_rpmsg_vring.obj (.const:.string:$P$T0$1)
+                  00839d5d    00000003     --HOLE-- [fill = 0]
+                  00839d60    00000015     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T1$2)
+                  00839d75    00000003     --HOLE-- [fill = 0]
+                  00839d78    00000015                                             : queue.obj (.const:.string:$P$T13$14)
+                  00839d8d    00000003     --HOLE-- [fill = 0]
+                  00839d90    00000015                                             : tasks.obj (.const:.string:$P$T23$24)
+                  00839da5    00000003     --HOLE-- [fill = 0]
+                  00839da8    00000015                                             : timers.obj (.const:.string:$P$T3$4)
+                  00839dbd    00000003     --HOLE-- [fill = 0]
+                  00839dc0    00000015     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T8$9)
+                  00839dd5    00000003     --HOLE-- [fill = 0]
+                  00839dd8    00000015                                            : uart_sci.obj (.const:.string:$P$T9$10)
+                  00839ded    00000003     --HOLE-- [fill = 0]
+                  00839df0    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T11$12)
+                  00839e04    00000004     --HOLE-- [fill = 0]
+                  00839e08    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.const:.string:$P$T12$13)
+                  00839e1c    00000004     --HOLE-- [fill = 0]
+                  00839e20    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.const:.string:$P$T12$14)
+                  00839e34    00000004     --HOLE-- [fill = 0]
+                  00839e38    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T14$15)
+                  00839e4c    00000004     --HOLE-- [fill = 0]
+                  00839e50    00000014                                            : uart_sci.obj (.const:.string:$P$T15$16)
+                  00839e64    00000004     --HOLE-- [fill = 0]
+                  00839e68    00000014                                            : ipc_rpmsg.obj (.const:.string:$P$T3$4)
+                  00839e7c    00000004     --HOLE-- [fill = 0]
+                  00839e80    00000014     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T9$10)
+                  00839e94    00000014                                             : printf.obj (.const:.string)
+                  00839ea8    00000013                                             : queue.obj (.const:.string:$P$T0$1)
+                  00839ebb    00000005     --HOLE-- [fill = 0]
+                  00839ec0    00000013                                             : port.obj (.const:.string:$P$T1$2)
+                  00839ed3    00000005     --HOLE-- [fill = 0]
+                  00839ed8    00000013                                             : tasks.obj (.const:.string:$P$T15$16)
+                  00839eeb    00000005     --HOLE-- [fill = 0]
+                  00839ef0    00000013                                             : tasks.obj (.const:.string:$P$T16$17)
+                  00839f03    00000005     --HOLE-- [fill = 0]
+                  00839f08    00000013     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:.string:$P$T17$18)
+                  00839f1b    00000005     --HOLE-- [fill = 0]
+                  00839f20    00000013                                            : uart_sci.obj (.const:.string:$P$T8$9)
+                  00839f33    00000005     --HOLE-- [fill = 0]
+                  00839f38    00000012                                            : ipc_notify_v1.obj (.const:.string:$P$T0$1)
+                  00839f4a    00000006     --HOLE-- [fill = 0]
+                  00839f50    00000012                                            : uart_sci_edma.obj (.const:.string:$P$T0$1)
+                  00839f62    00000006     --HOLE-- [fill = 0]
+                  00839f68    00000012     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T0$1)
+                  00839f7a    00000006     --HOLE-- [fill = 0]
+                  00839f80    00000012     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci_edma.obj (.const:.string:$P$T1$2)
+                  00839f92    00000006     --HOLE-- [fill = 0]
+                  00839f98    00000012                                            : uart_sci.obj (.const:.string:$P$T11$12)
+                  00839faa    00000006     --HOLE-- [fill = 0]
+                  00839fb0    00000012                                            : soc_rcm.obj (.const:.string:$P$T15$16)
+                  00839fc2    00000006     --HOLE-- [fill = 0]
+                  00839fc8    00000012                                            : soc_rcm.obj (.const:.string:$P$T19$20)
+                  00839fda    00000006     --HOLE-- [fill = 0]
+                  00839fe0    00000012                                            : edma.obj (.const:.string:$P$T3$4)
+                  00839ff2    00000006     --HOLE-- [fill = 0]
+                  00839ff8    00000012     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T7$8)
+                  0083a00a    00000006     --HOLE-- [fill = 0]
+                  0083a010    00000012                                             : queue.obj (.const:.string:$P$T9$10)
+                  0083a022    00000006     --HOLE-- [fill = 0]
+                  0083a028    00000011     ti_drivers_open_close.obj (.const:.string:$P$T0$1)
+                  0083a039    00000007     --HOLE-- [fill = 0]
+                  0083a040    00000011     ti_drivers_open_close.obj (.const:.string:$P$T1$2)
+                  0083a051    00000007     --HOLE-- [fill = 0]
+                  0083a058    00000011     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T19$20)
+                  0083a069    00000007     --HOLE-- [fill = 0]
+                  0083a070    00000011                                            : edma.obj (.const:.string:$P$T7$8)
+                  0083a081    00000007     --HOLE-- [fill = 0]
+                  0083a088    00000011                                            : uart_sci.obj (.const:.string:$P$T7$8)
+                  0083a099    00000007     --HOLE-- [fill = 0]
+                  0083a0a0    00000010                                            : edma.obj (.const:.string:$P$T11$12)
+                  0083a0b0    00000010     rts6600_elf.lib : _scanfi.c.obj (.const:.string)
+                  0083a0c0    00000010     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.const:gSocRcmXTALInfo)
+                  0083a0d0    0000000f                                            : ipc_rpmsg.obj (.const:.string:$P$T0$1)
                   0083a0df    00000001     --HOLE-- [fill = 0]
-                  0083a0e0    0000000f     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T17$18)
+                  0083a0e0    0000000f                                            : ipc_rpmsg.obj (.const:.string:$P$T1$2)
                   0083a0ef    00000001     --HOLE-- [fill = 0]
-                  0083a0f0    0000000f                                            : ipc_notify_v1.obj (.const:.string:$P$T2$3)
+                  0083a0f0    0000000f     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T10$11)
                   0083a0ff    00000001     --HOLE-- [fill = 0]
-                  0083a100    0000000e                                            : edma.obj (.const:.string:$P$T10$11)
-                  0083a10e    00000002     --HOLE-- [fill = 0]
-                  0083a110    0000000e     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T10$11)
-                  0083a11e    00000002     --HOLE-- [fill = 0]
-                  0083a120    0000000d     drivers.awr294x.c66.ti-c6000.debug.lib : mailbox.obj (.const:.string:$P$T0$1)
-                  0083a12d    00000003     --HOLE-- [fill = 0]
-                  0083a130    0000000d     freertos.awr294x.c66.ti-c6000.debug.lib : TimerP_rti.obj (.const:.string:$P$T0$1)
-                  0083a13d    00000003     --HOLE-- [fill = 0]
-                  0083a140    0000000d     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T16$17)
+                  0083a100    0000000f     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T17$18)
+                  0083a10f    00000001     --HOLE-- [fill = 0]
+                  0083a110    0000000f                                            : ipc_notify_v1.obj (.const:.string:$P$T2$3)
+                  0083a11f    00000001     --HOLE-- [fill = 0]
+                  0083a120    0000000e                                            : edma.obj (.const:.string:$P$T10$11)
+                  0083a12e    00000002     --HOLE-- [fill = 0]
+                  0083a130    0000000e     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T10$11)
+                  0083a13e    00000002     --HOLE-- [fill = 0]
+                  0083a140    0000000d     drivers.awr294x.c66.ti-c6000.debug.lib : mailbox.obj (.const:.string:$P$T0$1)
                   0083a14d    00000003     --HOLE-- [fill = 0]
-                  0083a150    0000000d     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T18$19)
+                  0083a150    0000000d     freertos.awr294x.c66.ti-c6000.debug.lib : TimerP_rti.obj (.const:.string:$P$T0$1)
                   0083a15d    00000003     --HOLE-- [fill = 0]
-                  0083a160    0000000d                                             : tasks.obj (.const:.string:$P$T26$27)
+                  0083a160    0000000d     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T16$17)
                   0083a16d    00000003     --HOLE-- [fill = 0]
-                  0083a170    0000000c                                             : ClockP_freertos_c66.obj (.const:.string:$P$T0$1)
-                  0083a17c    00000004     --HOLE-- [fill = 0]
-                  0083a180    0000000c     ti_drivers_config.obj (.const:.string:$P$T0$1)
-                  0083a18c    00000004     --HOLE-- [fill = 0]
-                  0083a190    0000000c     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T2$3)
+                  0083a170    0000000d     freertos.awr294x.c66.ti-c6000.debug.lib : queue.obj (.const:.string:$P$T18$19)
+                  0083a17d    00000003     --HOLE-- [fill = 0]
+                  0083a180    0000000d                                             : tasks.obj (.const:.string:$P$T26$27)
+                  0083a18d    00000003     --HOLE-- [fill = 0]
+                  0083a190    0000000c                                             : ClockP_freertos_c66.obj (.const:.string:$P$T0$1)
                   0083a19c    00000004     --HOLE-- [fill = 0]
-                  0083a1a0    0000000c                                             : tasks.obj (.const:.string:$P$T24$25)
+                  0083a1a0    0000000c     ti_drivers_config.obj (.const:.string:$P$T0$1)
                   0083a1ac    00000004     --HOLE-- [fill = 0]
-                  0083a1b0    0000000b     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T2$3)
-                  0083a1bb    00000005     --HOLE-- [fill = 0]
-                  0083a1c0    0000000b                                            : uart_sci.obj (.const:.string:$P$T2$3)
-                  0083a1cb    00000005     --HOLE-- [fill = 0]
-                  0083a1d0    0000000b                                            : uart_sci.obj (.const:.string:$P$T3$4)
+                  0083a1b0    0000000c     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.const:.string:$P$T2$3)
+                  0083a1bc    00000004     --HOLE-- [fill = 0]
+                  0083a1c0    0000000c                                             : tasks.obj (.const:.string:$P$T24$25)
+                  0083a1cc    00000004     --HOLE-- [fill = 0]
+                  0083a1d0    0000000b     drivers.awr294x.c66.ti-c6000.debug.lib : edma.obj (.const:.string:$P$T2$3)
                   0083a1db    00000005     --HOLE-- [fill = 0]
-                  0083a1e0    0000000a                                            : edma.obj (.const:.string:$P$T0$1)
-                  0083a1ea    00000006     --HOLE-- [fill = 0]
-                  0083a1f0    0000000a                                            : uart_sci.obj (.const:.string:$P$T0$1)
-                  0083a1fa    00000006     --HOLE-- [fill = 0]
-                  0083a200    0000000a                                            : edma.obj (.const:.string:$P$T1$2)
+                  0083a1e0    0000000b                                            : uart_sci.obj (.const:.string:$P$T2$3)
+                  0083a1eb    00000005     --HOLE-- [fill = 0]
+                  0083a1f0    0000000b                                            : uart_sci.obj (.const:.string:$P$T3$4)
+                  0083a1fb    00000005     --HOLE-- [fill = 0]
+                  0083a200    0000000a                                            : edma.obj (.const:.string:$P$T0$1)
                   0083a20a    00000006     --HOLE-- [fill = 0]
-                  0083a210    0000000a                                            : uart_sci.obj (.const:.string:$P$T1$2)
+                  0083a210    0000000a                                            : uart_sci.obj (.const:.string:$P$T0$1)
                   0083a21a    00000006     --HOLE-- [fill = 0]
-                  0083a220    00000008                                            : soc_rcm.obj (.const:gSocRcmXTALFreqTbl)
-                  0083a228    00000007     rts6600_elf.lib : _scanfi.c.obj (.const:.string:flit$1)
-                  0083a22f    00000001     --HOLE-- [fill = 0]
-                  0083a230    00000006                     : _scanfi.c.obj (.const:.string:barr$2)
-                  0083a236    00000002     --HOLE-- [fill = 0]
-                  0083a238    00000005     main.obj (.const:.string:$P$T0$1)
-                  0083a23d    00000003     --HOLE-- [fill = 0]
+                  0083a220    0000000a                                            : edma.obj (.const:.string:$P$T1$2)
+                  0083a22a    00000006     --HOLE-- [fill = 0]
+                  0083a230    0000000a                                            : uart_sci.obj (.const:.string:$P$T1$2)
+                  0083a23a    00000006     --HOLE-- [fill = 0]
+                  0083a240    00000008                                            : soc_rcm.obj (.const:gSocRcmXTALFreqTbl)
+                  0083a248    00000007     rts6600_elf.lib : _scanfi.c.obj (.const:.string:flit$1)
+                  0083a24f    00000001     --HOLE-- [fill = 0]
+                  0083a250    00000006                     : _scanfi.c.obj (.const:.string:barr$2)
+                  0083a256    00000002     --HOLE-- [fill = 0]
+                  0083a258    00000005     main.obj (.const:.string:$P$T0$1)
+                  0083a25d    00000003     --HOLE-- [fill = 0]
 
 .cinit     0    00800000    00000000     UNINITIALIZED
 
-.far       0    008208a0    0000af00     UNINITIALIZED
-                  008208a0    00004000     (.common:gMainTaskStack)
-                  008248a0    00004000     (.common:uxHwiStack)
-                  008288a0    00001000     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.far:uxIdleTaskStack)
-                  008298a0    00000730     (.common:gIpcRpmsgCtrl)
-                  00829fd0    0000040c     (.common:gHwiCtrl)
-                  0082a3dc    00000004     rts6600_elf.lib : memory.c.obj (.far)
-                  0082a3e0    00000400     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.far:uxTimerTaskStack)
-                  0082a7e0    000002b4     ti_drivers_config.obj (.far:gUartObjects)
-                  0082aa94    00000004     --HOLE--
-                  0082aa98    00000280     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.far:pxReadyTasksLists)
-                  0082ad18    000001e4     ti_drivers_config.obj (.far:gEdmaObjects)
-                  0082aefc    00000004     --HOLE--
-                  0082af00    00000140     (.common:__TI_tmpnams)
-                  0082b040    00000100     (.common:xQueueRegistry)
-                  0082b140    00000100     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.far:ucStaticTimerQueueStorage$16)
-                  0082b240    000000c0     DSP.obj (.far:gMsgObj)
-                  0082b300    000000c0     DSP.obj (.far:gRecvObj)
-                  0082b3c0    00000098     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_freertos.obj (.far:gDebugLogLockObj)
-                  0082b458    0000008c     (.common:gMainTaskObj)
-                  0082b4e4    0000008c                                             : port.obj (.far:xIdleTaskTCB)
-                  0082b570    0000008c                                             : port.obj (.far:xTimerTaskTCB)
-                  0082b5fc    00000050                                             : timers.obj (.far:xStaticTimerQueue$15)
-                  0082b64c    00000044     (.common:gHwiIntcIntrTable)
-                  0082b690    00000038     (.common:gClockCtrl)
-                  0082b6c8    00000018     (.common:gMailbox_ctrl)
-                  0082b6e0    00000014                                             : timers.obj (.far:xActiveTimerList1)
-                  0082b6f4    00000014                                             : timers.obj (.far:xActiveTimerList2)
-                  0082b708    00000014                                             : tasks.obj (.far:xDelayedTaskList1)
-                  0082b71c    00000014                                             : tasks.obj (.far:xDelayedTaskList2)
-                  0082b730    00000014                                             : tasks.obj (.far:xPendingReadyList)
-                  0082b744    00000014                                             : tasks.obj (.far:xSuspendedTaskList)
-                  0082b758    00000014                                             : tasks.obj (.far:xTasksWaitingTermination)
-                  0082b76c    00000004     --HOLE--
-                  0082b770    00000008     (.common:parmbuf)
-                  0082b778    00000004     (.common:gEdmaHandle)
-                  0082b77c    00000004     --HOLE--
-                  0082b780    00000004     (.common:gUartHandle)
-                  0082b784    0000001c     --HOLE--
+.far       0    008208c0    0000af00     UNINITIALIZED
+                  008208c0    00004000     (.common:gMainTaskStack)
+                  008248c0    00004000     (.common:uxHwiStack)
+                  008288c0    00001000     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.far:uxIdleTaskStack)
+                  008298c0    00000730     (.common:gIpcRpmsgCtrl)
+                  00829ff0    0000040c     (.common:gHwiCtrl)
+                  0082a3fc    00000004     rts6600_elf.lib : memory.c.obj (.far)
+                  0082a400    00000400     freertos.awr294x.c66.ti-c6000.debug.lib : port.obj (.far:uxTimerTaskStack)
+                  0082a800    000002b4     ti_drivers_config.obj (.far:gUartObjects)
+                  0082aab4    00000004     --HOLE--
+                  0082aab8    00000280     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.far:pxReadyTasksLists)
+                  0082ad38    000001e4     ti_drivers_config.obj (.far:gEdmaObjects)
+                  0082af1c    00000004     --HOLE--
+                  0082af20    00000140     (.common:__TI_tmpnams)
+                  0082b060    00000100     (.common:xQueueRegistry)
+                  0082b160    00000100     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.far:ucStaticTimerQueueStorage$16)
+                  0082b260    000000c0     DSP.obj (.far:gMsgObj)
+                  0082b320    000000c0     DSP.obj (.far:gRecvObj)
+                  0082b3e0    00000098     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_freertos.obj (.far:gDebugLogLockObj)
+                  0082b478    0000008c     (.common:gMainTaskObj)
+                  0082b504    0000008c                                             : port.obj (.far:xIdleTaskTCB)
+                  0082b590    0000008c                                             : port.obj (.far:xTimerTaskTCB)
+                  0082b61c    00000050                                             : timers.obj (.far:xStaticTimerQueue$15)
+                  0082b66c    00000044     (.common:gHwiIntcIntrTable)
+                  0082b6b0    00000038     (.common:gClockCtrl)
+                  0082b6e8    00000018     (.common:gMailbox_ctrl)
+                  0082b700    00000014                                             : timers.obj (.far:xActiveTimerList1)
+                  0082b714    00000014                                             : timers.obj (.far:xActiveTimerList2)
+                  0082b728    00000014                                             : tasks.obj (.far:xDelayedTaskList1)
+                  0082b73c    00000014                                             : tasks.obj (.far:xDelayedTaskList2)
+                  0082b750    00000014                                             : tasks.obj (.far:xPendingReadyList)
+                  0082b764    00000014                                             : tasks.obj (.far:xSuspendedTaskList)
+                  0082b778    00000014                                             : tasks.obj (.far:xTasksWaitingTermination)
+                  0082b78c    00000004     --HOLE--
+                  0082b790    00000008     (.common:parmbuf)
+                  0082b798    00000004     (.common:gEdmaHandle)
+                  0082b79c    00000004     --HOLE--
+                  0082b7a0    00000004     (.common:gUartHandle)
+                  0082b7a4    0000001c     --HOLE--
 
-.sysmem    0    0082b7a0    00008000     UNINITIALIZED
-                  0082b7a0    00000010     rts6600_elf.lib : memory.c.obj (.sysmem)
-                  0082b7b0    00007ff0     --HOLE--
+.sysmem    0    0082b7c0    00008000     UNINITIALIZED
+                  0082b7c0    00000010     rts6600_elf.lib : memory.c.obj (.sysmem)
+                  0082b7d0    00007ff0     --HOLE--
 
-.stack     0    008337a0    00004000     UNINITIALIZED
-                  008337a0    00000008     rts6600_elf.lib : boot.c.obj (.stack)
-                  008337a8    00003ff8     --HOLE--
+.stack     0    008337c0    00004000     UNINITIALIZED
+                  008337c0    00000008     rts6600_elf.lib : boot.c.obj (.stack)
+                  008337c8    00003ff8     --HOLE--
 
-.fardata   0    0083a240    00000b18     
-                  0083a240    000001e0     rts6600_elf.lib : defs.c.obj (.fardata:_ftable)
-                  0083a420    000001c0     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyMailboxConfig)
-                  0083a5e0    000000fc                                            : ipc_notify_v1.obj (.fardata:gIpcNotifyCtrl)
-                  0083a6dc    000000c0                                            : mailbox_cfg.obj (.fardata:gMailboxRemoteCoreObj_c66ss0_to_rss_r4)
-                  0083a79c    000000c0                                            : mailbox_cfg.obj (.fardata:gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4)
-                  0083a85c    00000004     rts6600_elf.lib : _lock.c.obj (.fardata:_lock)
-                  0083a860    000000a0                     : host_device.c.obj (.fardata:_stream)
-                  0083a900    0000009c     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.fardata:gUartDrvObj)
-                  0083a99c    00000004     rts6600_elf.lib : _lock.c.obj (.fardata:_unlock)
-                  0083a9a0    00000090     ti_pinmux_config.obj (.fardata:gPinMuxMainDomainCfg)
-                  0083aa30    00000084     freertos.awr294x.c66.ti-c6000.debug.lib : Context_c66.obj (.fardata:contextSave)
-                  0083aab4    00000004     rts6600_elf.lib : defs.c.obj (.fardata)
-                  0083aab8    00000080     ti_drivers_config.obj (.fardata:gEdmaAttrs)
-                  0083ab38    00000078     rts6600_elf.lib : host_device.c.obj (.fardata:_device)
-                  0083abb0    00000070     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyInterruptConfig_c66ss0)
-                  0083ac20    00000038     ti_pinmux_config.obj (.fardata:gPinMuxMainDomainCfg1)
-                  0083ac58    00000038     ti_drivers_open_close.obj (.fardata:gUartParams)
-                  0083ac90    0000001c     freertos.awr294x.c66.ti-c6000.debug.lib : port_hwi.obj (.fardata:Hwi_Module__state__V)
-                  0083acac    00000004     rts6600_elf.lib : errno.c.obj (.fardata)
-                  0083acb0    00000018     ti_dpl_config.obj (.fardata:gCacheMarRegion)
-                  0083acc8    00000018     ti_dpl_config.obj (.fardata:gClockConfig)
-                  0083ace0    00000018     ti_power_clock_config.obj (.fardata:gSocModulesClockFrequency)
-                  0083acf8    00000010     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyCoreIntrBitPos)
-                  0083ad08    0000000c     ti_dpl_config.obj (.fardata:gCacheSize)
-                  0083ad14    0000000c     rts6600_elf.lib : exit.c.obj (.fardata)
-                  0083ad20    00000008     freertos.awr294x.c66.ti-c6000.debug.lib : HwiP_c66.obj (.fardata:gDirectMap)
-                  0083ad28    00000008     ti_drivers_config.obj (.fardata:gEdmaConfig)
-                  0083ad30    00000008     ti_drivers_open_close.obj (.fardata:gEdmaParams)
-                  0083ad38    00000008     ti_power_clock_config.obj (.fardata:gSocModules)
-                  0083ad40    00000008     ti_drivers_config.obj (.fardata:gUartAttrs)
-                  0083ad48    00000008     ti_drivers_config.obj (.fardata:gUartConfig)
-                  0083ad50    00000004     rts6600_elf.lib : memory.c.obj (.fardata)
-                  0083ad54    00000004     --HOLE-- [fill = 0]
+.fardata   0    0083a260    00000b18     
+                  0083a260    000001e0     rts6600_elf.lib : defs.c.obj (.fardata:_ftable)
+                  0083a440    000001c0     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyMailboxConfig)
+                  0083a600    000000fc                                            : ipc_notify_v1.obj (.fardata:gIpcNotifyCtrl)
+                  0083a6fc    000000c0                                            : mailbox_cfg.obj (.fardata:gMailboxRemoteCoreObj_c66ss0_to_rss_r4)
+                  0083a7bc    000000c0                                            : mailbox_cfg.obj (.fardata:gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4)
+                  0083a87c    00000004     rts6600_elf.lib : _lock.c.obj (.fardata:_lock)
+                  0083a880    000000a0                     : host_device.c.obj (.fardata:_stream)
+                  0083a920    0000009c     drivers.awr294x.c66.ti-c6000.debug.lib : uart_sci.obj (.fardata:gUartDrvObj)
+                  0083a9bc    00000004     rts6600_elf.lib : _lock.c.obj (.fardata:_unlock)
+                  0083a9c0    00000090     ti_pinmux_config.obj (.fardata:gPinMuxMainDomainCfg)
+                  0083aa50    00000084     freertos.awr294x.c66.ti-c6000.debug.lib : Context_c66.obj (.fardata:contextSave)
+                  0083aad4    00000004     rts6600_elf.lib : defs.c.obj (.fardata)
+                  0083aad8    00000080     ti_drivers_config.obj (.fardata:gEdmaAttrs)
+                  0083ab58    00000078     rts6600_elf.lib : host_device.c.obj (.fardata:_device)
+                  0083abd0    00000070     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyInterruptConfig_c66ss0)
+                  0083ac40    00000038     ti_pinmux_config.obj (.fardata:gPinMuxMainDomainCfg1)
+                  0083ac78    00000038     ti_drivers_open_close.obj (.fardata:gUartParams)
+                  0083acb0    0000001c     freertos.awr294x.c66.ti-c6000.debug.lib : port_hwi.obj (.fardata:Hwi_Module__state__V)
+                  0083accc    00000004     rts6600_elf.lib : errno.c.obj (.fardata)
+                  0083acd0    00000018     ti_dpl_config.obj (.fardata:gCacheMarRegion)
+                  0083ace8    00000018     ti_dpl_config.obj (.fardata:gClockConfig)
+                  0083ad00    00000018     ti_power_clock_config.obj (.fardata:gSocModulesClockFrequency)
+                  0083ad18    00000010     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.fardata:gIpcNotifyCoreIntrBitPos)
+                  0083ad28    0000000c     ti_dpl_config.obj (.fardata:gCacheSize)
+                  0083ad34    0000000c     rts6600_elf.lib : exit.c.obj (.fardata)
+                  0083ad40    00000008     freertos.awr294x.c66.ti-c6000.debug.lib : HwiP_c66.obj (.fardata:gDirectMap)
+                  0083ad48    00000008     ti_drivers_config.obj (.fardata:gEdmaConfig)
+                  0083ad50    00000008     ti_drivers_open_close.obj (.fardata:gEdmaParams)
+                  0083ad58    00000008     ti_power_clock_config.obj (.fardata:gSocModules)
+                  0083ad60    00000008     ti_drivers_config.obj (.fardata:gUartAttrs)
+                  0083ad68    00000008     ti_drivers_config.obj (.fardata:gUartConfig)
+                  0083ad70    00000004     rts6600_elf.lib : memory.c.obj (.fardata)
+                  0083ad74    00000004     --HOLE-- [fill = 0]
 
-.switch    0    0083ad58    00000268     
-                  0083ad58    00000084     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.switch:_vsnprintf)
-                  0083addc    0000005c     rts6600_elf.lib : _scanfi.c.obj (.switch:__TI_scanfi)
-                  0083ae38    00000050     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.switch:SOC_rcmGetClkSrcAndDivReg)
-                  0083ae88    00000050                                            : soc_rcm.obj (.switch:SOC_rcmGetClkSrcAndDivValue)
-                  0083aed8    00000038     rts6600_elf.lib : _printfi.c.obj (.switch:__TI_printfi)
-                  0083af10    00000028     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.switch:prvProcessReceivedCommands)
-                  0083af38    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.switch:SOC_rcmGetApllHSDivOutFreq)
-                  0083af4c    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetCoreHSDivOut)
-                  0083af60    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetDSSHSDivOut)
-                  0083af74    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetFreqLeafNode)
-                  0083af88    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetPerHSDivOut)
-                  0083af9c    00000010                                            : edma.obj (.switch:Alloc_resource)
-                  0083afac    00000010                                            : soc_rcm.obj (.switch:SOC_rcmGetHSDIVClkOutMuxClkSrc)
-                  0083afbc    00000004     --HOLE-- [fill = 0]
+.switch    0    0083ad78    00000268     
+                  0083ad78    00000084     freertos.awr294x.c66.ti-c6000.debug.lib : printf.obj (.switch:_vsnprintf)
+                  0083adfc    0000005c     rts6600_elf.lib : _scanfi.c.obj (.switch:__TI_scanfi)
+                  0083ae58    00000050     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.switch:SOC_rcmGetClkSrcAndDivReg)
+                  0083aea8    00000050                                            : soc_rcm.obj (.switch:SOC_rcmGetClkSrcAndDivValue)
+                  0083aef8    00000038     rts6600_elf.lib : _printfi.c.obj (.switch:__TI_printfi)
+                  0083af30    00000028     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.switch:prvProcessReceivedCommands)
+                  0083af58    00000014     drivers.awr294x.c66.ti-c6000.debug.lib : soc_rcm.obj (.switch:SOC_rcmGetApllHSDivOutFreq)
+                  0083af6c    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetCoreHSDivOut)
+                  0083af80    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetDSSHSDivOut)
+                  0083af94    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetFreqLeafNode)
+                  0083afa8    00000014                                            : soc_rcm.obj (.switch:SOC_rcmGetPerHSDivOut)
+                  0083afbc    00000010                                            : edma.obj (.switch:Alloc_resource)
+                  0083afcc    00000010                                            : soc_rcm.obj (.switch:SOC_rcmGetHSDIVClkOutMuxClkSrc)
+                  0083afdc    00000004     --HOLE-- [fill = 0]
 
-.cio       0    0083afc0    00000120     UNINITIALIZED
-                  0083afc0    00000120     rts6600_elf.lib : trgmsg.c.obj (.cio)
+.cio       0    0083afe0    00000120     UNINITIALIZED
+                  0083afe0    00000120     rts6600_elf.lib : trgmsg.c.obj (.cio)
 
-.rodata    0    0083b0e0    00000008     
-                  0083b0e0    00000004     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.rodata)
-                  0083b0e4    00000004     --HOLE-- [fill = 0]
+.rodata    0    0083b100    00000008     
+                  0083b100    00000004     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.rodata)
+                  0083b104    00000004     --HOLE-- [fill = 0]
 
-.bss       0    0083b0e8    00000018     
-                  0083b0e8    00000008     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.bss) [fill = 0]
-                  0083b0f0    00000008                                             : timers.obj (.bss) [fill = 0]
-                  0083b0f8    00000004     (.common:gMainTask)
-                  0083b0fc    00000004     --HOLE-- [fill = 0]
+.bss       0    0083b108    00000018     
+                  0083b108    00000008     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.bss) [fill = 0]
+                  0083b110    00000008                                             : timers.obj (.bss) [fill = 0]
+                  0083b118    00000004     (.common:gMainTask)
+                  0083b11c    00000004     --HOLE-- [fill = 0]
 
 .neardata 
-*          0    0083b100    00000098     
-                  0083b100    00000040     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.neardata)
-                  0083b140    00000018                                             : port.obj (.neardata)
-                  0083b158    0000000c     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.neardata)
-                  0083b164    0000000c     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.neardata)
-                  0083b170    00000008                                             : DebugP_uartLogWriter.obj (.neardata)
-                  0083b178    00000008                                             : HwiP_c66.obj (.neardata)
-                  0083b180    00000008     ti_drivers_config.obj (.neardata)
-                  0083b188    00000004     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_freertos.obj (.neardata)
-                  0083b18c    00000004                                             : DebugP_log.obj (.neardata)
-                  0083b190    00000004     ti_dpl_config.obj (.neardata)
-                  0083b194    00000004     --HOLE-- [fill = 0]
+*          0    0083b120    00000098     
+                  0083b120    00000040     freertos.awr294x.c66.ti-c6000.debug.lib : tasks.obj (.neardata)
+                  0083b160    00000018                                             : port.obj (.neardata)
+                  0083b178    0000000c     drivers.awr294x.c66.ti-c6000.debug.lib : ipc_notify_v1_cfg.obj (.neardata)
+                  0083b184    0000000c     freertos.awr294x.c66.ti-c6000.debug.lib : timers.obj (.neardata)
+                  0083b190    0000000c     ti_drivers_config.obj (.neardata)
+                  0083b19c    00000008     freertos.awr294x.c66.ti-c6000.debug.lib : DebugP_uartLogWriter.obj (.neardata)
+                  0083b1a4    00000008                                             : HwiP_c66.obj (.neardata)
+                  0083b1ac    00000004                                             : DebugP_freertos.obj (.neardata)
+                  0083b1b0    00000004                                             : DebugP_log.obj (.neardata)
+                  0083b1b4    00000004     ti_dpl_config.obj (.neardata)
 
 .init_array 
 *          0    00800000    00000000     UNINITIALIZED
@@ -943,7 +943,7 @@ MODULE SUMMARY
        Total:                              736      145       16912  
                                                                      
     .\syscfg\
-       ti_drivers_config.obj               800      92        6136   
+       ti_drivers_config.obj               800      92        6140   
        ti_drivers_open_close.obj           736      142       72     
        ti_power_clock_config.obj           480      0         32     
        ti_pinmux_config.obj                64       0         200    
@@ -951,7 +951,7 @@ MODULE SUMMARY
        ti_board_open_close.obj             64       0         0      
        ti_board_config.obj                 32       0         0      
     +--+-----------------------------------+--------+---------+---------+
-       Total:                              2336     234       6504   
+       Total:                              2336     234       6508   
                                                                      
     C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/drivers/lib/drivers.awr294x.c66.ti-c6000.debug.lib
        edma.obj                            12256    382       0      
@@ -966,8 +966,9 @@ MODULE SUMMARY
        mailbox.obj                         512      61        24     
        mailbox_cfg.obj                     96       0         384    
        pinmux.obj                          192      0         0      
+       hwa.obj                             32       0         0      
     +--+-----------------------------------+--------+---------+---------+
-       Total:                              48320    5110      3244   
+       Total:                              48352    5110      3244   
                                                                      
     C:/ti/mmwave_mcuplus_sdk_04_07_01_04/mcu_plus_sdk_awr294x_10_01_00_04/source/kernel/freertos/lib/freertos.awr294x.c66.ti-c6000.debug.lib
        port_hwi.obj                        384      0         16412  
@@ -1072,7 +1073,7 @@ MODULE SUMMARY
        Heap:                               0        0         32768  
        Stack:                              0        0         16384  
     +--+-----------------------------------+--------+---------+---------+
-       Grand Total:                        133280   11072     102000 
+       Grand Total:                        133312   11072     102004 
 
 
 GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
@@ -1083,7 +1084,7 @@ address   name
 0081fe00  Board_driversClose                     
 0081fe20  Board_driversOpen                      
 0081fe40  Board_init                             
-00820660  C$$EXIT                                
+00820680  C$$EXIT                                
 0081e638  C$$IO$$                                
 0081a720  CacheP_init                            
 0081bba0  CacheP_setMar                          
@@ -1155,7 +1156,7 @@ address   name
 00814140  EDMA_registerIntr                      
 0081c220  EDMA_setEvtRegion                      
 0081c2a0  EDMA_setPaRAM                          
-0083b108  FreeRTOS_errno                         
+0083b128  FreeRTOS_errno                         
 0081ab80  HOSTclose                              
 00818960  HOSTlseek                              
 00818a40  HOSTopen                               
@@ -1163,13 +1164,14 @@ address   name
 00811980  HOSTrename                             
 008199a0  HOSTunlink                             
 00819a60  HOSTwrite                              
+00820020  HWA_init                               
 008132e0  HwiP_Entry                             
 0081db00  HwiP_Params_init                       
 00812ce0  HwiP_assignIntrHandlers                
 0080b6c0  HwiP_construct                         
 008109c0  HwiP_destruct                          
-00820060  HwiP_disable                           
-00820080  HwiP_enable                            
+00820080  HwiP_disable                           
+008200a0  HwiP_enable                            
 0081db60  HwiP_inISR                             
 00811b20  HwiP_init                              
 008142a0  HwiP_intcDispatcherCore                
@@ -1186,31 +1188,31 @@ address   name
 00813314  HwiP_intcInterruptEnable               
 00813370  HwiP_intcInterruptRestore              
 00813364  HwiP_intcInterruptSet                  
-00820680  HwiP_intcIvpSet                        
+008206a0  HwiP_intcIvpSet                        
 00814400  HwiP_intcNmiDispatcher                 
 00813388  HwiP_intcQueryInterruptStatus          
-00820220  HwiP_restore                           
-0083ac90  Hwi_Module__state__V                   
+00820240  HwiP_restore                           
+0083acb0  Hwi_Module__state__V                   
 0081f1a0  Hwi_Module_startup                     
 00810220  Hwi_dispatchAlways                     
 0081dbc0  Hwi_dispatchC__I                       
-00820240  Hwi_dispatchCore__I                    
+00820260  Hwi_dispatchCore__I                    
 0081f1e0  Hwi_getIsrStackAddress                 
 0081e520  Hwi_switchAndDispatch__I               
-00820260  Hwi_switchFromBootStack                
+00820280  Hwi_switchFromBootStack                
 00817be0  IpcNotify_Params_init                  
 0081dc20  IpcNotify_allocSwQueue                 
 0081f220  IpcNotify_getConfig                    
 0081c320  IpcNotify_getMemoryToRead              
 0081c3a0  IpcNotify_getMemoryToWrite             
-00820280  IpcNotify_getSelfCoreId                
+008202a0  IpcNotify_getSelfCoreId                
 008062a0  IpcNotify_init                         
 0081f260  IpcNotify_isCoreEnabled                
-008202a0  IpcNotify_isCustomIpcConfigEnabled     
+008202c0  IpcNotify_isCustomIpcConfigEnabled     
 008094a0  IpcNotify_isr                          
 00816920  IpcNotify_readAckCallback              
 00818b20  IpcNotify_registerClient               
-008202e0  IpcNotify_registerNonNotifyCallback    
+00820300  IpcNotify_registerNonNotifyCallback    
 00811cc0  IpcNotify_sendMsg                      
 0081de60  IpcNotify_syncCallback                 
 0081dec0  IpcNotify_syncCustomIpcConfig          
@@ -1218,7 +1220,7 @@ address   name
 00810b80  IpcNotify_trigInterrupt_ack            
 0081c5a0  IpcNotify_unregisterClient             
 0081f320  IpcNotify_wait                         
-00820300  Mailbox_Params_init                    
+00820320  Mailbox_Params_init                    
 0081df20  Mailbox_getRemoteCoreObj               
 00816a40  Mailbox_init                           
 0081f360  Mailbox_isCoreEnabled                  
@@ -1227,7 +1229,7 @@ address   name
 00817ce0  Module_clockSetFrequency               
 0081ad60  Pinmux_config                          
 0081f3a0  Pinmux_init                            
-00820320  PowerClock_init                        
+00820340  PowerClock_init                        
 0081a360  Power_Down                             
 0081a3b8  Power_Up                               
 0081f3e0  RPMessage_CreateParams_init            
@@ -1260,8 +1262,8 @@ address   name
 0080d620  RPMessage_vringResetInternal           
 00810020  SOC_controlModuleLockMMR               
 0080db60  SOC_controlModuleUnlockMMR             
-00820380  SOC_moduleClockEnable                  
-008203a0  SOC_moduleSetClockFrequency            
+008203a0  SOC_moduleClockEnable                  
+008203c0  SOC_moduleSetClockFrequency            
 0081e280  SOC_rcmGetPeripheralClock              
 0081e2e0  SOC_rcmIsPadDisableRequired            
 00818dc0  SOC_rcmSetPeripheralClock              
@@ -1272,13 +1274,13 @@ address   name
 00819e20  SemaphoreP_pend                        
 0081b080  SemaphoreP_post                        
 00812340  System_init                            
-008203c0  TaskP_yield                            
+008203e0  TaskP_yield                            
 0081f720  TaskSupport_buildTaskStack             
-00820500  TaskSupport_glue                       
+00820520  TaskSupport_glue                       
 0081cba0  TaskSupport_swap__E                    
 0081f560  Task_Func                              
-008203e0  Task_enter                             
-00820400  Task_exit                              
+00820400  Task_enter                             
+00820420  Task_exit                              
 0081e340  TimerP_Params_init                     
 0081f5a0  TimerP_clearOverflowInt                
 0081e3a0  TimerP_getCount                        
@@ -1297,26 +1299,26 @@ address   name
 00819ee0  _DebugP_assert                         
 0081f6e0  _DebugP_assertNoLog                    
 00819fa0  _DebugP_logZone                        
-0083afc0  __CIOBUF_                              
+0083afe0  __CIOBUF_                              
 UNDEFED   __TI_CINIT_Base                        
 UNDEFED   __TI_CINIT_Limit                       
 UNDEFED   __TI_Handler_Table_Base                
 UNDEFED   __TI_Handler_Table_Limit               
-008377a0  __TI_STACK_END                         
+008377c0  __TI_STACK_END                         
 00004000  __TI_STACK_SIZE                        
-0083b0e0  __TI_STATIC_BASE                       
+0083b100  __TI_STATIC_BASE                       
 00008000  __TI_SYSMEM_SIZE                       
 UNDEFED   __TI_TLS_INIT_Base                     
 UNDEFED   __TI_TLS_INIT_Limit                    
 0081a060  __TI_auto_init_nobinit_nopinit         
 0081b3a0  __TI_cleanup                           
-0083ad14  __TI_cleanup_ptr                       
+0083ad34  __TI_cleanup_ptr                       
 008181e0  __TI_closefile                         
 0081b440  __TI_doflush                           
-0083ad18  __TI_dtors_ptr                         
-0083ad1c  __TI_enable_exit_profile_output        
+0083ad38  __TI_dtors_ptr                         
+0083ad3c  __TI_enable_exit_profile_output        
 0081e580  __TI_frcmpyd_div                       
-0083aab4  __TI_ft_end                            
+0083aad4  __TI_ft_end                            
 00818ea0  __TI_ltoa                              
 ffffffff  __TI_pprof_out_hndl                    
 00802360  __TI_printfi                           
@@ -1325,7 +1327,7 @@ ffffffff  __TI_prof_data_start
 0081cc20  __TI_readmsg                           
 00800200  __TI_scanfi                            
 0081a5a0  __TI_tls_init                          
-0082af00  __TI_tmpnams                           
+0082af20  __TI_tmpnams                           
 0081e5e0  __TI_writemsg                          
 00818f80  __TI_wrt_ok                            
 ffffffff  __binit__                              
@@ -1334,13 +1336,13 @@ ffffffff  __binit__
 0081a120  __c6xabi_divu                          
 00810f00  __c6xabi_divul                         
 0080f360  __c6xabi_divull                        
-00820520  __c6xabi_errno_addr                    
+00820540  __c6xabi_errno_addr                    
 0081cca0  __c6xabi_fixdu                         
 0081f760  __c6xabi_isinf                         
 0081cd20  __c6xabi_llshl                         
 0081e640  __c6xabi_llshru                        
-00820540  __c6xabi_pop_rts                       
-00820560  __c6xabi_push_rts                      
+00820560  __c6xabi_pop_rts                       
+00820580  __c6xabi_push_rts                      
 0081a1e0  __c6xabi_remi                          
 0081b4e0  __c6xabi_remu                          
 0081e6a0  __c6xabi_remull                        
@@ -1348,98 +1350,99 @@ ffffffff  __binit__
 ffffffff  __c_args__                             
 00819060  __divi                                 
 0081a120  __divu                                 
-0083acac  __errno                                
-00820540  __pop_rts                              
-00820560  __push_rts                             
+0083accc  __errno                                
+00820560  __pop_rts                              
+00820580  __push_rts                             
 0081a1e0  __remi                                 
 0081b4e0  __remu                                 
 0081f7a0  __strasgi_64plus                       
 0081f7e0  _args_main                             
 0081ce20  _c_int00                               
-00838fa8  _ctypes_                               
-0083ab38  _device                                
-0083a240  _ftable                                
-0083a85c  _lock                                  
-008205a0  _nop                                   
-008205e0  _signbit                               
-008337a0  _stack                                 
-0083a860  _stream                                
+00838fc8  _ctypes_                               
+0083ab58  _device                                
+0083a260  _ftable                                
+0083a87c  _lock                                  
+008205c0  _nop                                   
+00820600  _signbit                               
+008337c0  _stack                                 
+0083a880  _stream                                
 0081e7c0  _subcull                               
-0082b7a0  _sys_memory                            
-00820600  _system_post_cinit                     
-00820620  _system_pre_init                       
-0083a99c  _unlock                                
+0082b7c0  _sys_memory                            
+00820620  _system_post_cinit                     
+00820640  _system_pre_init                       
+0083a9bc  _unlock                                
 00800000  _vectors                               
-00820660  abort                                  
+00820680  abort                                  
 0080cb60  aligned_alloc                          
 008182e0  atoi                                   
 ffffffff  binit                                  
 00819140  close                                  
-0083aa30  contextSave                            
+0083aa50  contextSave                            
 008124e0  dsp_main                               
-0083acac  errno                                  
+0083accc  errno                                  
 00819220  exit                                   
 0081b580  finddevice                             
 008110c0  fputc                                  
 0080ec80  free                                   
-008206a0  freertos_main                          
+008206c0  freertos_main                          
 00811280  frexp                                  
 00811280  frexpl                                 
 008183e0  fseek                                  
 008183e0  fseeko                                 
-0083acb0  gCacheMarRegion                        
-0083b190  gCacheMarRegionNum                     
-0083ad08  gCacheSize                             
-0083acc8  gClockConfig                           
-0082b690  gClockCtrl                             
-0083b18c  gDebugLogZone                          
-0083b170  gDebugP_uartDrvIndex                   
-0083ad20  gDirectMap                             
-0083ad28  gEdmaConfig                            
-0083b184  gEdmaConfigNum                         
-0082b778  gEdmaHandle                            
-0083ad30  gEdmaParams                            
-00829fd0  gHwiCtrl                               
-0082b64c  gHwiIntcIntrTable                      
-0083b178  gHwiRaisePrivilegeHook                 
-0083b17c  gHwiRestorePrivilegeHook               
-0083acf8  gIpcNotifyCoreIntrBitPos               
-0083a5e0  gIpcNotifyCtrl                         
-0083b160  gIpcNotifyInterruptConfigNum_c66ss0    
-0083b158  gIpcNotifyInterruptConfigNum_r5fss0_0  
-0083b15c  gIpcNotifyInterruptConfigNum_r5fss0_1  
-0083abb0  gIpcNotifyInterruptConfig_c66ss0       
-0083a420  gIpcNotifyMailboxConfig                
-008298a0  gIpcRpmsgCtrl                          
+0083acd0  gCacheMarRegion                        
+0083b1b4  gCacheMarRegionNum                     
+0083ad28  gCacheSize                             
+0083ace8  gClockConfig                           
+0082b6b0  gClockCtrl                             
+0083b1b0  gDebugLogZone                          
+0083b19c  gDebugP_uartDrvIndex                   
+0083ad40  gDirectMap                             
+0083ad48  gEdmaConfig                            
+0083b190  gEdmaConfigNum                         
+0082b798  gEdmaHandle                            
+0083ad50  gEdmaParams                            
+0083b194  gHwaConfigNum                          
+00829ff0  gHwiCtrl                               
+0082b66c  gHwiIntcIntrTable                      
+0083b1a4  gHwiRaisePrivilegeHook                 
+0083b1a8  gHwiRestorePrivilegeHook               
+0083ad18  gIpcNotifyCoreIntrBitPos               
+0083a600  gIpcNotifyCtrl                         
+0083b180  gIpcNotifyInterruptConfigNum_c66ss0    
+0083b178  gIpcNotifyInterruptConfigNum_r5fss0_0  
+0083b17c  gIpcNotifyInterruptConfigNum_r5fss0_1  
+0083abd0  gIpcNotifyInterruptConfig_c66ss0       
+0083a440  gIpcNotifyMailboxConfig                
+008298c0  gIpcRpmsgCtrl                          
 c5000200  gIpcSharedMem                          
-0083a6dc  gMailboxRemoteCoreObj_c66ss0_to_rss_r4 
-0083a79c  gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4
-0082b6c8  gMailbox_ctrl                          
-0083b0f8  gMainTask                              
-0082b458  gMainTaskObj                           
-008208a0  gMainTaskStack                         
-0083ad38  gSocModules                            
-0083ace0  gSocModulesClockFrequency              
-0083ad48  gUartConfig                            
-0083b180  gUartConfigNum                         
-0082b780  gUartHandle                            
-0083ac58  gUartParams                            
+0083a6fc  gMailboxRemoteCoreObj_c66ss0_to_rss_r4 
+0083a7bc  gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4
+0082b6e8  gMailbox_ctrl                          
+0083b118  gMainTask                              
+0082b478  gMainTaskObj                           
+008208c0  gMainTaskStack                         
+0083ad58  gSocModules                            
+0083ad00  gSocModulesClockFrequency              
+0083ad68  gUartConfig                            
+0083b198  gUartConfigNum                         
+0082b7a0  gUartHandle                            
+0083ac78  gUartParams                            
 00817340  getdevice                              
 00813460  ldexp                                  
 00813460  ldexpl                                 
 0081e820  lseek                                  
 0081a420  main                                   
-008206c0  malloc                                 
+008206e0  malloc                                 
 0080cb60  memalign                               
 0081f8a0  memccpy                                
 0081b620  memcpy                                 
 00819300  memset                                 
-0082b770  parmbuf                                
+0082b790  parmbuf                                
 008110c0  putc                                   
-00820700  putchar                                
+00820720  putchar                                
 0081fa20  putchar_                               
 0081fa60  pvTaskIncrementMutexHeldCount          
-0083b100  pxCurrentTCB                           
+0083b120  pxCurrentTCB                           
 0081e9a0  pxPortInitialiseStack                  
 0081d320  remove                                 
 00813460  scalbn                                 
@@ -1454,33 +1457,33 @@ c5000200  gIpcSharedMem
 00808fe0  strtoll                                
 0080ba00  strtoul                                
 00809d00  strtoull                               
-00820720  uiPortGetRunTimeCounterValue           
-0083b140  ulCriticalNesting                      
-0083b14c  ulPortInterruptNesting                 
-0083b150  ulPortSchedularRunning                 
-0083b144  ulPortTaskHasFPUContext                
-0083b148  ulPortYieldRequired                    
+00820740  uiPortGetRunTimeCounterValue           
+0083b160  ulCriticalNesting                      
+0083b16c  ulPortInterruptNesting                 
+0083b170  ulPortSchedularRunning                 
+0083b164  ulPortTaskHasFPUContext                
+0083b168  ulPortYieldRequired                    
 0081d320  unlink                                 
-008248a0  uxHwiStack                             
+008248c0  uxHwiStack                             
 0081d3a0  uxListRemove                           
-0083b154  uxPortIncorrectYieldCount              
-0083b0e0  uxTopUsedPriority                      
+0083b174  uxPortIncorrectYieldCount              
+0083b100  uxTopUsedPriority                      
 0081eb20  vApplicationGetIdleTaskMemory          
 0081eb80  vApplicationGetTimerTaskMemory         
 0081ebe0  vApplicationStackOverflowHook          
 0081fae0  vListInitialise                        
-00820740  vListInitialiseItem                    
+00820760  vListInitialiseItem                    
 0081a660  vListInsert                            
 0081d420  vListInsertEnd                         
 0081d4a0  vPortAssertIfInISR                     
-00820760  vPortConfigTimerForRunTimeStats        
-00820780  vPortEnterCritical                     
-008207a0  vPortExitCritical                      
+00820780  vPortConfigTimerForRunTimeStats        
+008207a0  vPortEnterCritical                     
+008207c0  vPortExitCritical                      
 0081fb20  vPortFree                              
-008207c0  vPortRestoreTaskContext                
-008207e0  vPortSuppressTicksAndSleep             
+008207e0  vPortRestoreTaskContext                
+00820800  vPortSuppressTicksAndSleep             
 0081fb60  vPortTimerTickHandler                  
-00820800  vPortValidateInterruptPriority         
+00820820  vPortValidateInterruptPriority         
 0081fba0  vPortYeildFromISR                      
 0081d520  vPortYield                             
 0081fbe0  vPortYieldAsyncFromISR                 
@@ -1492,12 +1495,12 @@ c5000200  gIpcSharedMem
 0081ec40  vTaskEnterCritical                     
 0081eca0  vTaskExitCritical                      
 0081fc20  vTaskInternalSetTimeOutState           
-00820820  vTaskMissedYield                       
+00820840  vTaskMissedYield                       
 0081d6a0  vTaskPlaceOnEventList                  
 0081d720  vTaskPlaceOnEventListRestricted        
 00810600  vTaskPriorityDisinheritAfterTimeout    
 008176a0  vTaskStartScheduler                    
-00820840  vTaskSuspendAll                        
+00820860  vTaskSuspendAll                        
 00812820  vTaskSwitchContext                     
 0081fc60  vprintf_                               
 0081fca0  wcslen                                 
@@ -1513,14 +1516,14 @@ c5000200  gIpcSharedMem
 0081b9e0  xQueueGiveMutexRecursive               
 0080e2e0  xQueueReceive                          
 00811440  xQueueReceiveFromISR                   
-0082b040  xQueueRegistry                         
+0082b060  xQueueRegistry                         
 0080c020  xQueueSemaphoreTake                    
 0081ba80  xQueueTakeMutexRecursive               
 00816480  xTaskCheckForTimeOut                   
 00815060  xTaskCreateStatic                      
-00820860  xTaskGetCurrentTaskHandle              
+00820880  xTaskGetCurrentTaskHandle              
 0081fda0  xTaskGetSchedulerState                 
-00820880  xTaskGetTickCount                      
+008208a0  xTaskGetTickCount                      
 00811600  xTaskIncrementTick                     
 00813760  xTaskPriorityDisinherit                
 008138e0  xTaskPriorityInherit                   
@@ -1859,117 +1862,119 @@ address   name
 0081ffc0  Drivers_close                          
 0081ffe0  Drivers_open                           
 00820000  EDMA_isInterruptEnabled                
-00820060  HwiP_disable                           
-00820080  HwiP_enable                            
-00820220  HwiP_restore                           
-00820240  Hwi_dispatchCore__I                    
-00820260  Hwi_switchFromBootStack                
-00820280  IpcNotify_getSelfCoreId                
-008202a0  IpcNotify_isCustomIpcConfigEnabled     
-008202e0  IpcNotify_registerNonNotifyCallback    
-00820300  Mailbox_Params_init                    
-00820320  PowerClock_init                        
-00820380  SOC_moduleClockEnable                  
-008203a0  SOC_moduleSetClockFrequency            
-008203c0  TaskP_yield                            
-008203e0  Task_enter                             
-00820400  Task_exit                              
-00820500  TaskSupport_glue                       
-00820520  __c6xabi_errno_addr                    
-00820540  __c6xabi_pop_rts                       
-00820540  __pop_rts                              
-00820560  __c6xabi_push_rts                      
-00820560  __push_rts                             
-008205a0  _nop                                   
-008205e0  _signbit                               
-00820600  _system_post_cinit                     
-00820620  _system_pre_init                       
-00820660  C$$EXIT                                
-00820660  abort                                  
-00820680  HwiP_intcIvpSet                        
-008206a0  freertos_main                          
-008206c0  malloc                                 
-00820700  putchar                                
-00820720  uiPortGetRunTimeCounterValue           
-00820740  vListInitialiseItem                    
-00820760  vPortConfigTimerForRunTimeStats        
-00820780  vPortEnterCritical                     
-008207a0  vPortExitCritical                      
-008207c0  vPortRestoreTaskContext                
-008207e0  vPortSuppressTicksAndSleep             
-00820800  vPortValidateInterruptPriority         
-00820820  vTaskMissedYield                       
-00820840  vTaskSuspendAll                        
-00820860  xTaskGetCurrentTaskHandle              
-00820880  xTaskGetTickCount                      
-008208a0  gMainTaskStack                         
-008248a0  uxHwiStack                             
-008298a0  gIpcRpmsgCtrl                          
-00829fd0  gHwiCtrl                               
-0082af00  __TI_tmpnams                           
-0082b040  xQueueRegistry                         
-0082b458  gMainTaskObj                           
-0082b64c  gHwiIntcIntrTable                      
-0082b690  gClockCtrl                             
-0082b6c8  gMailbox_ctrl                          
-0082b770  parmbuf                                
-0082b778  gEdmaHandle                            
-0082b780  gUartHandle                            
-0082b7a0  _sys_memory                            
-008337a0  _stack                                 
-008377a0  __TI_STACK_END                         
-00838fa8  _ctypes_                               
-0083a240  _ftable                                
-0083a420  gIpcNotifyMailboxConfig                
-0083a5e0  gIpcNotifyCtrl                         
-0083a6dc  gMailboxRemoteCoreObj_c66ss0_to_rss_r4 
-0083a79c  gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4
-0083a85c  _lock                                  
-0083a860  _stream                                
-0083a99c  _unlock                                
-0083aa30  contextSave                            
-0083aab4  __TI_ft_end                            
-0083ab38  _device                                
-0083abb0  gIpcNotifyInterruptConfig_c66ss0       
-0083ac58  gUartParams                            
-0083ac90  Hwi_Module__state__V                   
-0083acac  __errno                                
-0083acac  errno                                  
-0083acb0  gCacheMarRegion                        
-0083acc8  gClockConfig                           
-0083ace0  gSocModulesClockFrequency              
-0083acf8  gIpcNotifyCoreIntrBitPos               
-0083ad08  gCacheSize                             
-0083ad14  __TI_cleanup_ptr                       
-0083ad18  __TI_dtors_ptr                         
-0083ad1c  __TI_enable_exit_profile_output        
-0083ad20  gDirectMap                             
-0083ad28  gEdmaConfig                            
-0083ad30  gEdmaParams                            
-0083ad38  gSocModules                            
-0083ad48  gUartConfig                            
-0083afc0  __CIOBUF_                              
-0083b0e0  __TI_STATIC_BASE                       
-0083b0e0  uxTopUsedPriority                      
-0083b0f8  gMainTask                              
-0083b100  pxCurrentTCB                           
-0083b108  FreeRTOS_errno                         
-0083b140  ulCriticalNesting                      
-0083b144  ulPortTaskHasFPUContext                
-0083b148  ulPortYieldRequired                    
-0083b14c  ulPortInterruptNesting                 
-0083b150  ulPortSchedularRunning                 
-0083b154  uxPortIncorrectYieldCount              
-0083b158  gIpcNotifyInterruptConfigNum_r5fss0_0  
-0083b15c  gIpcNotifyInterruptConfigNum_r5fss0_1  
-0083b160  gIpcNotifyInterruptConfigNum_c66ss0    
-0083b170  gDebugP_uartDrvIndex                   
-0083b178  gHwiRaisePrivilegeHook                 
-0083b17c  gHwiRestorePrivilegeHook               
-0083b180  gUartConfigNum                         
-0083b184  gEdmaConfigNum                         
-0083b18c  gDebugLogZone                          
-0083b190  gCacheMarRegionNum                     
+00820020  HWA_init                               
+00820080  HwiP_disable                           
+008200a0  HwiP_enable                            
+00820240  HwiP_restore                           
+00820260  Hwi_dispatchCore__I                    
+00820280  Hwi_switchFromBootStack                
+008202a0  IpcNotify_getSelfCoreId                
+008202c0  IpcNotify_isCustomIpcConfigEnabled     
+00820300  IpcNotify_registerNonNotifyCallback    
+00820320  Mailbox_Params_init                    
+00820340  PowerClock_init                        
+008203a0  SOC_moduleClockEnable                  
+008203c0  SOC_moduleSetClockFrequency            
+008203e0  TaskP_yield                            
+00820400  Task_enter                             
+00820420  Task_exit                              
+00820520  TaskSupport_glue                       
+00820540  __c6xabi_errno_addr                    
+00820560  __c6xabi_pop_rts                       
+00820560  __pop_rts                              
+00820580  __c6xabi_push_rts                      
+00820580  __push_rts                             
+008205c0  _nop                                   
+00820600  _signbit                               
+00820620  _system_post_cinit                     
+00820640  _system_pre_init                       
+00820680  C$$EXIT                                
+00820680  abort                                  
+008206a0  HwiP_intcIvpSet                        
+008206c0  freertos_main                          
+008206e0  malloc                                 
+00820720  putchar                                
+00820740  uiPortGetRunTimeCounterValue           
+00820760  vListInitialiseItem                    
+00820780  vPortConfigTimerForRunTimeStats        
+008207a0  vPortEnterCritical                     
+008207c0  vPortExitCritical                      
+008207e0  vPortRestoreTaskContext                
+00820800  vPortSuppressTicksAndSleep             
+00820820  vPortValidateInterruptPriority         
+00820840  vTaskMissedYield                       
+00820860  vTaskSuspendAll                        
+00820880  xTaskGetCurrentTaskHandle              
+008208a0  xTaskGetTickCount                      
+008208c0  gMainTaskStack                         
+008248c0  uxHwiStack                             
+008298c0  gIpcRpmsgCtrl                          
+00829ff0  gHwiCtrl                               
+0082af20  __TI_tmpnams                           
+0082b060  xQueueRegistry                         
+0082b478  gMainTaskObj                           
+0082b66c  gHwiIntcIntrTable                      
+0082b6b0  gClockCtrl                             
+0082b6e8  gMailbox_ctrl                          
+0082b790  parmbuf                                
+0082b798  gEdmaHandle                            
+0082b7a0  gUartHandle                            
+0082b7c0  _sys_memory                            
+008337c0  _stack                                 
+008377c0  __TI_STACK_END                         
+00838fc8  _ctypes_                               
+0083a260  _ftable                                
+0083a440  gIpcNotifyMailboxConfig                
+0083a600  gIpcNotifyCtrl                         
+0083a6fc  gMailboxRemoteCoreObj_c66ss0_to_rss_r4 
+0083a7bc  gMailboxRemoteCoreObj_r5ss0_0_to_rss_r4
+0083a87c  _lock                                  
+0083a880  _stream                                
+0083a9bc  _unlock                                
+0083aa50  contextSave                            
+0083aad4  __TI_ft_end                            
+0083ab58  _device                                
+0083abd0  gIpcNotifyInterruptConfig_c66ss0       
+0083ac78  gUartParams                            
+0083acb0  Hwi_Module__state__V                   
+0083accc  __errno                                
+0083accc  errno                                  
+0083acd0  gCacheMarRegion                        
+0083ace8  gClockConfig                           
+0083ad00  gSocModulesClockFrequency              
+0083ad18  gIpcNotifyCoreIntrBitPos               
+0083ad28  gCacheSize                             
+0083ad34  __TI_cleanup_ptr                       
+0083ad38  __TI_dtors_ptr                         
+0083ad3c  __TI_enable_exit_profile_output        
+0083ad40  gDirectMap                             
+0083ad48  gEdmaConfig                            
+0083ad50  gEdmaParams                            
+0083ad58  gSocModules                            
+0083ad68  gUartConfig                            
+0083afe0  __CIOBUF_                              
+0083b100  __TI_STATIC_BASE                       
+0083b100  uxTopUsedPriority                      
+0083b118  gMainTask                              
+0083b120  pxCurrentTCB                           
+0083b128  FreeRTOS_errno                         
+0083b160  ulCriticalNesting                      
+0083b164  ulPortTaskHasFPUContext                
+0083b168  ulPortYieldRequired                    
+0083b16c  ulPortInterruptNesting                 
+0083b170  ulPortSchedularRunning                 
+0083b174  uxPortIncorrectYieldCount              
+0083b178  gIpcNotifyInterruptConfigNum_r5fss0_0  
+0083b17c  gIpcNotifyInterruptConfigNum_r5fss0_1  
+0083b180  gIpcNotifyInterruptConfigNum_c66ss0    
+0083b190  gEdmaConfigNum                         
+0083b194  gHwaConfigNum                          
+0083b198  gUartConfigNum                         
+0083b19c  gDebugP_uartDrvIndex                   
+0083b1a4  gHwiRaisePrivilegeHook                 
+0083b1a8  gHwiRestorePrivilegeHook               
+0083b1b0  gDebugLogZone                          
+0083b1b4  gCacheMarRegionNum                     
 c5000200  gIpcSharedMem                          
 ffffffff  __TI_pprof_out_hndl                    
 ffffffff  __TI_prof_data_size                    
@@ -1984,4 +1989,4 @@ UNDEFED   __TI_Handler_Table_Limit
 UNDEFED   __TI_TLS_INIT_Base                     
 UNDEFED   __TI_TLS_INIT_Limit                    
 
-[449 symbols]
+[451 symbols]

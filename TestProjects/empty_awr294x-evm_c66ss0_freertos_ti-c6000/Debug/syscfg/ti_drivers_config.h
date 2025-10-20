@@ -53,6 +53,25 @@ void System_init(void);
 void System_deinit(void);
 
 /*
+ * EDMA
+ */
+#include <drivers/edma.h>
+#include <drivers/soc.h>
+
+/* EDMA Instance Macros */
+#define CONFIG_EDMA0_BASE_ADDR (CSL_DSS_TPCC_A_U_BASE)
+#define CONFIG_EDMA0 (0U)
+#define CONFIG_EDMA_NUM_INSTANCES (1U)
+/*
+ * HWA
+ */
+#include <drivers/hwa.h>
+
+/* HWA Instance Macros */
+#define CONFIG_HWA0 (0U)
+#define CONFIG_HWA_NUM_INSTANCES (1U)
+
+/*
  * IPC Notify
  */
 #include <drivers/ipc_notify.h>
@@ -76,16 +95,6 @@ void System_deinit(void);
 #define CONFIG_UART0 (0U)
 #define CONFIG_UART_NUM_INSTANCES (1U)
 #define CONFIG_UART_NUM_DMA_INSTANCES (0U)
-/*
- * EDMA
- */
-#include <drivers/edma.h>
-#include <drivers/soc.h>
-
-/* EDMA Instance Macros */
-#define CONFIG_EDMA0_BASE_ADDR (CSL_RSS_TPCC_A_U_BASE)
-#define CONFIG_EDMA0 (0U)
-#define CONFIG_EDMA_NUM_INSTANCES (1U)
 
 #include <drivers/soc.h>
 #include <kernel/dpl/CycleCounterP.h>

@@ -36,6 +36,117 @@
 #include "ti_drivers_config.h"
 
 /*
+ * EDMA
+ */
+/* EDMA atrributes */
+static EDMA_Attrs gEdmaAttrs[CONFIG_EDMA_NUM_INSTANCES] =
+{
+    {
+
+        .baseAddr           = CSL_DSS_TPCC_A_U_BASE,
+        .tcBaseAddr[0]    = CSL_DSS_TPTC_A0_U_BASE,
+        .tcBaseAddr[1]    = CSL_DSS_TPTC_A1_U_BASE,
+        .numTptc            = 2,
+        .compIntrNumber     = CSL_DSS_INTR_DSS_TPCC_A_INTAGG,
+        .compIntrNumberDirMap      = 0,
+        .isErrIntrAvailable   = 1,
+        .errIntrNumber      = CSL_DSS_INTR_DSS_TPCC_A_ERRAGG,
+        .errIntrNumberDirMap      = 0,
+        .intrAggEnableAddr  = CSL_DSS_CTRL_U_BASE + CSL_DSS_CTRL_DSS_TPCC_A_INTAGG_MASK,
+        .intrAggEnableMask  = 0x1FF & (~(2U << 0)),
+        .intrAggStatusAddr  = CSL_DSS_CTRL_U_BASE + CSL_DSS_CTRL_DSS_TPCC_A_INTAGG_STATUS,
+        .intrAggClearMask   = (2U << 0),
+        .errIntrAggEnableAddr  = CSL_DSS_CTRL_U_BASE + CSL_DSS_CTRL_DSS_TPCC_A_ERRAGG_MASK,
+        .errIntrAggStatusAddr  = CSL_DSS_CTRL_U_BASE + CSL_DSS_CTRL_DSS_TPCC_A_ERRAGG_STATUS,
+        .initPrms           =
+        {
+            .regionId     = 0,
+            .queNum       = 0,
+            .initParamSet = FALSE,
+            .ownResource    =
+            {
+                .qdmaCh      = 0x3FU,
+                .dmaCh[0]    = 0xFFFFFFFFU,
+                .dmaCh[1]    = 0x0FFFFFFFU,
+                .tcc[0]      = 0xFFFFFFFFU,
+                .tcc[1]      = 0x0FFFFFFFU,
+                .paramSet[0] = 0xFFFFFFFFU,
+                .paramSet[1] = 0xFFFFFFFFU,
+                .paramSet[2] = 0xFFFFFFFFU,
+                .paramSet[3] = 0x00FFFFFFU,
+            },
+            .reservedDmaCh[0]    = 0x00000001U,
+            .reservedDmaCh[1]    = 0x00000000U,
+        },
+    },
+};
+
+/* EDMA objects - initialized by the driver */
+static EDMA_Object gEdmaObjects[CONFIG_EDMA_NUM_INSTANCES];
+/* EDMA driver configuration */
+EDMA_Config gEdmaConfig[CONFIG_EDMA_NUM_INSTANCES] =
+{
+    {
+        &gEdmaAttrs[CONFIG_EDMA0],
+        &gEdmaObjects[CONFIG_EDMA0],
+    },
+};
+
+uint32_t gEdmaConfigNum = CONFIG_EDMA_NUM_INSTANCES;
+
+/*
+ * HWA
+ */
+/* HWA atrributes */
+HWA_Attrs gHwaAttrs[CONFIG_HWA_NUM_INSTANCES] =
+{
+    {
+        .instanceNum                = 0U,
+        .ctrlBaseAddr               = CSL_DSS_HWA_CFG_U_BASE,
+        .paramBaseAddr              = CSL_DSS_HWA_PARAM_U_BASE,
+        .ramBaseAddr                = CSL_DSS_HWA_WINDOW_RAM_U_BASE,
+        .dssBaseAddr                = CSL_DSS_CTRL_U_BASE,
+        .numHwaParamSets            = SOC_HWA_NUM_PARAM_SETS,
+        .intNum1ParamSet            = CSL_DSS_INTR_DSS_HWA_PARAM_DONE_INTR1,
+        .intNum2ParamSet            = CSL_DSS_INTR_DSS_HWA_PARAM_DONE_INTR2,
+        .intNumDone                 = CSL_DSS_INTR_DSS_HWA_LOOP_INTR1,
+        .intNumDoneALT              = CSL_DSS_INTR_DSS_HWA_LOOP_INTR2,
+        .intNumLocalRamErr          = CSL_DSS_INTR_DSS_HWA_LOCAL_RAM_ERR,
+        .intNum1ParamSetDirMap      = 0,
+        .intNum2ParamSetDirMap      = 0,
+        .intNumDoneDirMap           = 0,
+        .intNumDoneALTDirMap        = 0,
+        .intNumLocalRamErrDirMap    = 0,
+        .numDmaChannels             = SOC_HWA_NUM_DMA_CHANNEL,
+        .accelMemBaseAddr           = CSL_DSS_HWA_DMA0_U_BASE,
+        .accelMemSize               = SOC_HWA_MEM_SIZE,
+        .isConcurrentAccessAllowed  = true,
+    },
+};
+
+/* HWA RAM atrributes */
+HWA_RAMAttrs gHwaRamCfg[HWA_NUM_RAMS] =
+{
+    {CSL_DSS_HWA_WINDOW_RAM_U_BASE, CSL_DSS_HWA_WINDOW_RAM_U_SIZE},
+    {CSL_DSS_HWA_MULT_RAM_U_BASE, CSL_DSS_HWA_MULT_RAM_U_SIZE},
+    {CSL_DSS_HWA_DEROT_RAM_U_BASE, CSL_DSS_HWA_DEROT_RAM_U_SIZE},
+    {CSL_DSS_HWA_SHUFFLE_RAM_U_BASE,CSL_DSS_HWA_SHUFFLE_RAM_U_SIZE},
+    {CSL_DSS_HWA_HIST_THRESH_RAM_U_BASE, CSL_DSS_HWA_HIST_THRESH_RAM_U_SIZE},
+    {CSL_DSS_HWA_2DSTAT_ITER_VAL_RAM_U_BASE, CSL_DSS_HWA_2DSTAT_ITER_VAL_RAM_U_SIZE},
+    {CSL_DSS_HWA_2DSTAT_ITER_IDX_RAM_U_BASE, CSL_DSS_HWA_2DSTAT_ITER_IDX_RAM_U_SIZE},
+    {CSL_DSS_HWA_2DSTAT_SMPL_VAL_RAM_U_BASE, CSL_DSS_HWA_2DSTAT_SMPL_VAL_RAM_U_SIZE},
+    {CSL_DSS_HWA_2DSTAT_SMPL_IDX_RAM_U_BASE, CSL_DSS_HWA_2DSTAT_SMPL_IDX_RAM_U_SIZE},
+    {CSL_DSS_HWA_HIST_RAM_U_BASE, CSL_DSS_HWA_HIST_RAM_U_SIZE}
+};
+
+/* HWA objects - initialized by the driver */
+HWA_Object gHwaObject[CONFIG_HWA_NUM_INSTANCES];
+/* HWA objects - storage for HWA driver object handles */
+HWA_Object *gHwaObjectPtr[CONFIG_HWA_NUM_INSTANCES] = { NULL };
+/* HWA objects count */
+uint32_t gHwaConfigNum = CONFIG_HWA_NUM_INSTANCES;
+
+/*
  * IPC Notify
  */
 #include <drivers/ipc_notify.h>
@@ -163,64 +274,6 @@ void Drivers_uartInit(void)
     UART_init();
 }
 
-/*
- * EDMA
- */
-/* EDMA atrributes */
-static EDMA_Attrs gEdmaAttrs[CONFIG_EDMA_NUM_INSTANCES] =
-{
-    {
-
-        .baseAddr           = CSL_RSS_TPCC_A_U_BASE,
-        .tcBaseAddr[0]    = CSL_RSS_TPTC_A0_U_BASE,
-        .numTptc            = 1,
-        .compIntrNumber     = CSL_DSS_INTR_RSS_TPCC_A_INTAGG,
-        .compIntrNumberDirMap      = 0,
-        .isErrIntrAvailable   = 1,
-        .errIntrNumber      = CSL_DSS_INTR_RSS_TPCC_A_ERRAGG,
-        .errIntrNumberDirMap      = 0,
-        .intrAggEnableAddr  = CSL_RSS_CTRL_U_BASE + CSL_RSS_CTRL_RSS_TPCC_A_INTAGG_MASK,
-        .intrAggEnableMask  = 0x1FF & (~(2U << 0)),
-        .intrAggStatusAddr  = CSL_RSS_CTRL_U_BASE + CSL_RSS_CTRL_RSS_TPCC_A_INTAGG_STATUS,
-        .intrAggClearMask   = (2U << 0),
-        .errIntrAggEnableAddr  = CSL_RSS_CTRL_U_BASE + CSL_RSS_CTRL_RSS_TPCC_A_ERRAGG_MASK,
-        .errIntrAggStatusAddr  = CSL_RSS_CTRL_U_BASE + CSL_RSS_CTRL_RSS_TPCC_A_ERRAGG_STATUS,
-        .initPrms           =
-        {
-            .regionId     = 0,
-            .queNum       = 0,
-            .initParamSet = FALSE,
-            .ownResource    =
-            {
-                .qdmaCh      = 0x0FU,
-                .dmaCh[0]    = 0xFFFFFFFFU,
-                .dmaCh[1]    = 0x00000000U,
-                .tcc[0]      = 0xFFFFFFFFU,
-                .tcc[1]      = 0x00000000U,
-                .paramSet[0] = 0xFFFFFFFFU,
-                .paramSet[1] = 0xFFFFFFFFU,
-                .paramSet[2] = 0x00000000U,
-                .paramSet[3] = 0x00000000U,
-            },
-            .reservedDmaCh[0]    = 0x0000003FU,
-            .reservedDmaCh[1]    = 0x00000000U,
-        },
-    },
-};
-
-/* EDMA objects - initialized by the driver */
-static EDMA_Object gEdmaObjects[CONFIG_EDMA_NUM_INSTANCES];
-/* EDMA driver configuration */
-EDMA_Config gEdmaConfig[CONFIG_EDMA_NUM_INSTANCES] =
-{
-    {
-        &gEdmaAttrs[CONFIG_EDMA0],
-        &gEdmaObjects[CONFIG_EDMA0],
-    },
-};
-
-uint32_t gEdmaConfigNum = CONFIG_EDMA_NUM_INSTANCES;
-
 
 void Pinmux_init(void);
 void PowerClock_init(void);
@@ -245,6 +298,8 @@ void System_init(void)
     /* Now we can do pinmux */
     Pinmux_init();
     /* finally we initialize all peripheral drivers */
+    EDMA_init();
+    HWA_init();
 
 
     /* IPC Notify */
@@ -315,16 +370,16 @@ void System_init(void)
     }
 
     Drivers_uartInit();
-    EDMA_init();
 }
 
 void System_deinit(void)
 {
+    EDMA_deinit();
+    HWA_deinit();
     RPMessage_deInit();
     IpcNotify_deInit();
 
     UART_deinit();
-    EDMA_deinit();
     PowerClock_deinit();
     Dpl_deinit();
 }

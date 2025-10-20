@@ -11,6 +11,7 @@
 "./syscfg/ti_enet_soc.obj"
 "./syscfg/ti_enet_lwipif.obj"
 "./main.obj"
+"./objectdetection.obj"
 "../linker.cmd"
 -lfreertos.awr294x.c66.ti-c6000.debug.lib
 -ldrivers.awr294x.c66.ti-c6000.debug.lib
